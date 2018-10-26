@@ -1,0 +1,26 @@
+#
+- name: Add the EPEL repo
+  yum:
+    name: epel-release
+    state: present
+
+- name: Add PostgreSQL repository
+  yum:
+    name: "{{ postgres_rpm_repo }}"
+    state: present
+
+- name: "Install firewalld"
+  yum:
+    name: firewalld
+    state: present
+
+- name: "Enable firewalld service"
+  service:
+    name: firewalld
+    enabled: yes
+    state: started
+
+- name: Install Midnight Commander
+  yum:
+    name: mc
+    state: latest

@@ -1,0 +1,13 @@
+---
+# ------------ ISDN-OFF Database setup
+  - name: install postgresql server
+    include: "install-pg10-centos7.yml"
+
+  - name: setup postgresql server
+    include: "setup-server-centos7.yml"
+
+  - name: create postgresql database and owner role
+    include: "setup-db-centos7.yml"
+#
+# EOF
+#

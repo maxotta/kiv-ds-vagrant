@@ -1,0 +1,24 @@
+#
+  - name: Install software
+    yum:
+      name: "{{ item }}"
+      state: latest
+    with_items:
+      - nginx
+      - postgresql10
+
+  - name: Start NGINX webserver service
+    service:
+      name: nginx
+      enabled: yes
+      state: started
+
+  - name: enable NGinx port on the firewall
+    firewalld:
+      port: 80/tcp
+      permanent: true
+      state: enabled
+    notify: "restart firewall"
+
+  - name: force handler calls
+    meta: flush_handlers

@@ -1,0 +1,83 @@
+---
+# ------------- Setup the PostgreSQL server database ---------------
+  # run checking script and echo its return value
+  - name: "check if init is needed"
+    shell: "{{ pg_bin_dir }}/postgresql-10-check-db-dir {{ pg_data_dir }}"
+    register: dbinit
+    check_mode: false
+    changed_when: false
+    ignore_errors: true
+
+  # run the init only if the return value was not equal 0
+  - name: "init PostgreSQL"
+    shell: "{{ pg_bin_dir }}/postgresql-10-setup initdb"
+    when: dbinit.rc != 0
+
+  - name: Test successfull DB initialization
+    stat:
+      path: "{{ pg_data_dir }}/postgresql.conf"
+    register: stat_result
+
+  - name: Fail on DB init failure
+    fail:
+      msg: "DB initialization failed"
+    when: stat_result.stat.exists == False 
+
+  - name: install Python PostgreSQL adapter (required by Ansible)
+    yum:
+      name: python-psycopg2
+      state: latest
+
+  - name: PostgreSQL pg_hba.conf
+    template:
+      src: templates/pg_hba.conf.j2
+      dest: "{{ pg_data_dir }}/pg_hba.conf"
+      owner: postgres
+      group: postgres
+      mode: '0600'
+    # notify: "restart the PostgreSQL server"
+
+  - name: get a list of backend servers
+    set_fact:
+      backend_server_ips: "{{ groups[backend_servers_group] | map('extract', hostvars, ['ansible_host']) | list }}"
+    when: backend_servers_group is defined
+    # notify: "restart the PostgreSQL server"
+
+  - name: allow access from backend servers
+    lineinfile:
+      path: "{{ pg_data_dir }}/pg_hba.conf"
+      regexp: "^host[ \t]+all[ \t]+all[ \t]+\\Q{{ item }}/32\\E[ \t]+md5$"
+      line: "host all all {{ item }}/32 md5"
+      owner: postgres
+      group: postgres
+      mode: '0600'
+    with_items: "{{ backend_server_ips }}"
+    when: backend_servers_group is defined and backend_server_ips is defined
+    # notify: "restart the PostgreSQL server"
+
+  # turn on listening from all addresses - local network style
+  - name: "setup PostgreSQL startup config"
+    replace:
+      dest: "{{ pg_data_dir }}/postgresql.conf"
+      regexp: "{{ item.regexp }}"
+      replace: "{{ item.line }}"
+    with_items:
+      - { regexp: "^.?listen_addresses = 'localhost'", line: "listen_addresses = '*'" }
+      - { regexp: "^.?log_min_messages = warning", line: "log_min_messages = info" }
+      - { regexp: "^.?log_connections = off", line: "log_connections = on" }
+      - { regexp: "^.?log_hostname = off", line: "log_hostname = on" }
+      - { regexp: "^.?log_line_prefix = ''", line: "log_line_prefix = '< %m >'" }
+    notify: "restart the PostgreSQL server"
+
+  - name: enable PostgreSQL port on the firewall
+    firewalld:
+      port: 5432/tcp
+      permanent: true
+      state: enabled
+    notify: "restart firewall"
+
+  - name: force handler calls
+    meta: flush_handlers
+#
+# EOF
+#

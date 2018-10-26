@@ -1,0 +1,32 @@
+---
+  # create the DBA superuser
+  - name: create postgresql DBA user role
+    become: true
+    become_user: postgres
+    postgresql_user:
+      name: "{{ pg_dba_user }}"
+      password: "{{ pg_dba_password }}"
+      encrypted: yes
+      role_attr_flags: SUPERUSER
+
+# ------------- Create owner role and database ---------------
+
+  - name: create postgresql database user role
+    become: true
+    become_user: postgres
+    postgresql_user:
+      name: "{{ pg_db_owner }}"
+      password: "{{ pg_db_password }}"
+      encrypted: yes
+
+  - name: create postgresql database
+    become: true
+    become_user: postgres
+    postgresql_db:
+      name: "{{ pg_db_name }}"
+      encoding: "{{ pg_db_encoding }}"
+      owner: "{{ pg_db_owner }}"
+
+#
+# EOF
+#
