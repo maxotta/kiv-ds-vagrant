@@ -1,0 +1,85 @@
+VAGRANTFILE_API_VERSION = "2"
+
+cluster = {
+  "master"  => { :ip => "10.0.1.10", :cpus => 1, :mem => 1024 },
+  "slave-1" => { :ip => "10.0.1.11", :cpus => 1, :mem => 1024 },
+  "slave-2" => { :ip => "10.0.1.12", :cpus => 1, :mem => 1024 },
+  "slave-3" => { :ip => "10.0.1.13", :cpus => 1, :mem => 1024 },
+}
+ 
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+    config.vm.synced_folder ".", "/vagrant"
+    config.vm.box = "geerlingguy/centos7"
+    config.ssh.insert_key = false
+
+    cluster.each_with_index do |(hostname, info), index|
+
+        config.vm.define hostname do |cfg|
+            cfg.vm.provider :virtualbox do |vb, override|
+                override.vm.network :private_network, ip: "#{info[:ip]}"
+                override.vm.hostname = hostname
+                vb.name = hostname
+                vb.customize ["modifyvm", :id, "--memory", info[:mem], "--cpus", info[:cpus], "--hwvirtex", "on"]
+
+                config.vm.provision "shell", inline: <<-SHELL
+                    yum -q -y install epel-release
+                    yum -q -y install mc
+                    yum -q -y install python36
+                    yum -q -y install python34-pip
+                    pip3.4 install --upgrade pip
+                    pip3.4 install pika
+                    curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash
+                    yum -q -y install erlang-21.1.1-1.el7.centos.x86_64
+                    curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
+                    yum -q -y install rabbitmq-server
+                    chkconfig rabbitmq-server on
+                    systemctl start rabbitmq-server
+                SHELL
+
+            end # end provider
+        end # end config
+    end # end cluster
+end
+
+
+# Vagrant.configure("2") do |config|
+
+#     config.vm.synced_folder ".", "/vagrant"
+#     config.vm.box = "geerlingguy/centos7"
+#     config.ssh.insert_key = false
+    
+#     config.vm.define "webserver" do |cfg|
+#         cfg.vm.network "private_network", ip: "10.0.1.10"
+#         cfg.vm.hostname = "webserver"
+#         config.vm.provision "shell", inline: <<-SHELL
+#             yum -q -y install epel-release
+#             yum -q -y install mc
+#             yum -q -y install nginx
+#             yum -q -y install postgresql
+#             systemctl start nginx
+#         SHELL
+#     end
+  
+#     # config.vm.define "dbserver" do |cfg|
+#     #     cfg.vm.network "private_network", ip: "10.0.1.11"
+#     #     cfg.vm.hostname = "dbserver"
+#     #     cfg.vm.provision "shell", #TODO: postgresql-setup initdb
+#     #         inline: <<-SHELL
+#     #             yum -q -y install epel-release
+#     #             yum -q -y install mc
+#     #             yum -q -y install postgresql-server
+#     #             systemctl start postgresql
+#     #         SHELL
+#     # end
+
+# end
+
+# yum install python36
+# yum install python36-pip
+# pip3.4 install --upgrade pip
+# pip3.4 install pika
+# curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash
+# yum install erlang-21.1.1-1.el7.centos.x86_64
+# curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
+# yum install rabbitmq-server
