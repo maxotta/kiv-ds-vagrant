@@ -25,6 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                 config.vm.provision "shell", inline: <<-SHELL
                     yum -q -y install epel-release
                     yum -q -y install mc
+                    yum -q -y install screen
                     yum -q -y install python36
                     yum -q -y install python34-pip
                     pip3.4 install --upgrade pip
