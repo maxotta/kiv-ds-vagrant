@@ -1,10 +1,12 @@
 VAGRANTFILE_API_VERSION = "2"
 
+# cluster = {
+#   "node-1" => { :ip => "10.0.1.11", :cpus => 1, :mem => 512 },
+#   "node-2" => { :ip => "10.0.1.12", :cpus => 1, :mem => 512 },
+#   "node-3" => { :ip => "10.0.1.13", :cpus => 1, :mem => 512 },
+# }
 cluster = {
-  "master"  => { :ip => "10.0.1.10", :cpus => 1, :mem => 1024 },
-  "slave-1" => { :ip => "10.0.1.11", :cpus => 1, :mem => 1024 },
-  "slave-2" => { :ip => "10.0.1.12", :cpus => 1, :mem => 1024 },
-  "slave-3" => { :ip => "10.0.1.13", :cpus => 1, :mem => 1024 },
+  "node-1" => { :ip => "10.0.1.11", :cpus => 1, :mem => 512 }
 }
  
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -30,14 +32,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                     yum -q -y install python36
                     yum -q -y python36-devel
                     yum -q -y install python34-pip
+                    yum -q -y python34-devel
                     pip3.4 install --upgrade pip
-                    pip3.4 install pika
-                    curl -s https://packagecloud.io/install/repositories/rabbitmq/erlang/script.rpm.sh | sudo bash
-                    yum -q -y install erlang-21.1.1-1.el7.centos.x86_64
-                    curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
-                    yum -q -y install rabbitmq-server
-                    chkconfig rabbitmq-server on
-                    systemctl start rabbitmq-server
+                    yum -q -y install zeromq3
+                    pip3.4 install pyzmq
                 SHELL
 
             end # end provider
