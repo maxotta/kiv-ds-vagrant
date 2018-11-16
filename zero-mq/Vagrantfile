@@ -1,12 +1,9 @@
 VAGRANTFILE_API_VERSION = "2"
 
-# cluster = {
-#   "node-1" => { :ip => "10.0.1.11", :cpus => 1, :mem => 512 },
-#   "node-2" => { :ip => "10.0.1.12", :cpus => 1, :mem => 512 },
-#   "node-3" => { :ip => "10.0.1.13", :cpus => 1, :mem => 512 },
-# }
 cluster = {
-  "node-1" => { :ip => "10.0.1.11", :cpus => 1, :mem => 512 }
+  "node-1" => { :ip => "10.0.1.11", :cpus => 1, :mem => 512 },
+  "node-2" => { :ip => "10.0.1.12", :cpus => 1, :mem => 512 },
+  "node-3" => { :ip => "10.0.1.13", :cpus => 1, :mem => 512 },
 }
  
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
