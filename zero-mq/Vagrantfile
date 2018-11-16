@@ -1,9 +1,9 @@
 VAGRANTFILE_API_VERSION = "2"
 
 cluster = {
-  "node-1" => { :ip => "10.0.1.11", :cpus => 1, :mem => 512 }
+  "node-1" => { :ip => "10.0.1.11", :cpus => 1, :mem => 512 },
   "node-2" => { :ip => "10.0.1.12", :cpus => 1, :mem => 512 },
-  "node-3" => { :ip => "10.0.1.13", :cpus => 1, :mem => 512 },
+  "node-3" => { :ip => "10.0.1.13", :cpus => 1, :mem => 512 }
 }
  
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -23,6 +23,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
                 config.vm.provision "shell", inline: <<-SHELL
                     yum -q -y install epel-release
+                    yum -q -y install avahi
+                    yum -q -y install avahi-tools
+                    yum -q -y install nss-mdns
+                    mv /etc/avahi/avahi-daemon.conf /etc/avahi/avahi-daemon.conf.bak
+                    NAT_IF=`route | awk '/default/{ print $8 }'`
+                    sed "/^\[server\]$/a allow-interfaces=$NAT_IF\ndeny-interfaces=lo" /etc/avahi/avahi-daemon.conf.bak > /etc/avahi/avahi-daemon.conf
+                    systemctl restart avahi-daemon
                     yum -q -y group install 'Development Tools'
                     yum -q -y install mc
                     yum -q -y install screen
