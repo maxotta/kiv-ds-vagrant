@@ -1,11 +1,22 @@
 VAGRANTFILE_API_VERSION = "2"
 
+cluster_id = "0mq"
 cluster = {
   "node-1" => { :ip => "10.0.1.11", :cpus => 1, :mem => 512 },
   "node-2" => { :ip => "10.0.1.12", :cpus => 1, :mem => 512 },
   "node-3" => { :ip => "10.0.1.13", :cpus => 1, :mem => 512 }
 }
- 
+
+$provisioning_script = <<-SCRIPT
+sh /vagrant/base-setup.sh
+sh /vagrant/mdns-setup.sh 10.0.1.0
+sh /vagrant/python-setup.sh
+
+yum -q -y install zeromq3
+pip3.4 install pyzmq
+
+SCRIPT
+
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     config.vm.synced_folder ".", "/vagrant"
@@ -18,23 +29,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             cfg.vm.provider :virtualbox do |vb, override|
                 override.vm.network :private_network, ip: "#{info[:ip]}"
                 override.vm.hostname = hostname
-                vb.name = hostname
+                vb.name = cluster_id + "_" + hostname
                 vb.customize ["modifyvm", :id, "--memory", info[:mem], "--cpus", info[:cpus], "--hwvirtex", "on"]
-
-                config.vm.provision "shell", inline: <<-SHELL
-                    /vagrant/base-setup.sh
-                    yum -q -y group install 'Development Tools'
-                    yum -q -y install mc
-                    yum -q -y install screen
-                    yum -q -y install python36
-                    yum -q -y install python36-devel
-                    yum -q -y install python34-pip
-                    yum -q -y install python34-devel
-                    pip3.4 install --upgrade pip
-                    yum -q -y install zeromq3
-                    pip3.4 install pyzmq
-                SHELL
-
+                config.vm.provision "shell", inline: $provisioning_script
             end # end provider
         end # end config
     end # end cluster
