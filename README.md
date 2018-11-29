@@ -21,3 +21,6 @@ export PATH="$PATH:/mnt/c/Program Files/Oracle/VirtualBox"
 export VAGRANT_WSL_WINDOWS_ACCESS_USER_HOME_PATH="/mnt/c/src"
 export VAGRANT_WSL_DISABLE_VAGRANT_HOME="true"
 ```
+
+## TODOS
+- [ ] translate all README.md's into English
