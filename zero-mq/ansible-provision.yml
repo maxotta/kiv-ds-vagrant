@@ -1,0 +1,13 @@
+---
+- name: Zero MQ infrastructure
+  hosts: all
+  become: true
+  vars:
+    mdns_subnet: 10.0.1.0    
+  roles:
+    - common
+    - multicast-dns
+    - development
+    - zero-mq
+    - hello-world-rest-api
+  
