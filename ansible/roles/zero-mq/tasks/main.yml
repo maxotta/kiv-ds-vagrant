@@ -1,0 +1,12 @@
+#
+# Install 0zeromq stuff
+#
+
+- name: install zeromq3
+  yum:
+    name: zeromq3
+    state: present
+
+- name: install python library
+  pip:
+    name: pyzmq

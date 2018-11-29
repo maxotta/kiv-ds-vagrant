@@ -1,0 +1,12 @@
+[Unit]
+Description=Search Service
+
+[Service]
+ExecStart={{ hello_service_home }}/bin/hello-world-rest-api
+Type=simple
+User={{ hello_service_user }}
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target 

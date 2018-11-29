@@ -1,0 +1,9 @@
+#
+# https://tecadmin.net/install-java-8-on-centos-rhel-and-fedora/
+#
+
+- name: Install Java
+  yum:
+    name: java
+    state: present
+
