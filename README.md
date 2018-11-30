@@ -25,3 +25,5 @@ export VAGRANT_WSL_DISABLE_VAGRANT_HOME="true"
 ## TODOS
 - [ ] translate all README.md's into English
 - [ ] better description of WSL installation (provide screenshots)
+- [ ] add Linux & OSX HOWTOs
+
