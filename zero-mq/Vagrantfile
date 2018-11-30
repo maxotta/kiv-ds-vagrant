@@ -7,15 +7,7 @@ cluster = {
   "node-3" => { :ip => "10.0.1.13", :cpus => 1, :mem => 512 }
 }
 
-$provisioning_script = <<-SCRIPT
-sh /vagrant/base-setup.sh
-sh /vagrant/mdns-setup.sh 10.0.1.0
-sh /vagrant/python-setup.sh
-
-yum -q -y install zeromq3
-pip3.4 install pyzmq
-
-SCRIPT
+ENV['ANSIBLE_ROLES_PATH'] = "../ansible/roles/"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
@@ -31,8 +23,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                 override.vm.hostname = hostname
                 vb.name = cluster_id + "_" + hostname
                 vb.customize ["modifyvm", :id, "--memory", info[:mem], "--cpus", info[:cpus], "--hwvirtex", "on"]
-                config.vm.provision "shell", inline: $provisioning_script
-            end # end provider
+                config.vm.provision "ansible" do |ansible|
+                    ansible.compatibility_mode = "2.0"
+                    ansible.playbook = "ansible-provision.yml"
+                    # ansible.groups = {}
+                  end
+                        end # end provider
         end # end config
     end # end cluster
 end
