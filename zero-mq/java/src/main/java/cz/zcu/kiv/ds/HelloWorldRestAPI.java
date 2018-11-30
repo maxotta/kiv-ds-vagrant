@@ -25,9 +25,7 @@ public class HelloWorldRestAPI {
         } catch (UnknownHostException e) {
             hostname = "unknown";
         }
-        return "{ \"message\": \"Hello World from " + hostname + "\" }";
+        return "{ \"message\": \"Hello World from " + hostname + "\" }\n";
     }
 
 }
-
-// InetAddress.getLocalHost().getHostName()
