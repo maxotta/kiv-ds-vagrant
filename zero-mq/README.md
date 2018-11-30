@@ -13,7 +13,7 @@ Před vlastním spuštěním infrastruktury je nutno nejdříve sestavit Hello W
 
 Celou infrastrukturu spustíme příkazem
 ```
-    Vagrant up
+    vagrant up
 ```
 
 Pak můžeme otestovat volání ukázkové REST API aplikace:
