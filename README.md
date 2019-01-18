@@ -26,4 +26,6 @@ export VAGRANT_WSL_DISABLE_VAGRANT_HOME="true"
 - [ ] translate all README.md's into English
 - [ ] better description of WSL installation (provide screenshots)
 - [ ] add Linux & OSX HOWTOs
+- [ ] install Ansible via dpkg
+
 
