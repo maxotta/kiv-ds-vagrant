@@ -1,2 +1,7 @@
-rabbit-mq/.vagrant
+.vagrant/
+.vscode/
+.gradle/
+.idea/
+build/
+bin/
 
