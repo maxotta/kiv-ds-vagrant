@@ -9,8 +9,8 @@
     sudo apt-get -y install python-pip python-dev libffi-dev libssl-dev
     pip install ansible --user
 
-    wget https://releases.hashicorp.com/vagrant/2.2.0/vagrant_2.2.0_x86_64.deb
-    dpkg -i vagrant_2.2.0_x86_64.deb
+    wget https://releases.hashicorp.com/vagrant/2.2.5/vagrant_2.2.5_x86_64.deb
+    dpkg -i vagrant_2.2.5_x86_64.deb
 ```
 Na konec souboru .bash_profile přidáme:
 
