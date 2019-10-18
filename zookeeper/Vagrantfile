@@ -1,0 +1,45 @@
+VAGRANTFILE_API_VERSION = "2"
+
+cluster = {
+  "node-1" => { :ip => "10.0.1.11", :cpus => 1, :mem => 1024 },
+  "node-2" => { :ip => "10.0.1.12", :cpus => 1, :mem => 1024 },
+  "node-3" => { :ip => "10.0.1.13", :cpus => 1, :mem => 1024 },
+}
+ 
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+    config.vm.synced_folder ".", "/vagrant"
+    config.vm.box = "geerlingguy/centos7"
+    config.ssh.insert_key = false
+
+    cluster.each_with_index do |(hostname, info), index|
+
+        config.vm.define hostname do |cfg|
+            cfg.vm.provider :virtualbox do |vb, override|
+                override.vm.network :private_network, ip: "#{info[:ip]}"
+                override.vm.hostname = hostname
+                vb.name = hostname
+                vb.customize ["modifyvm", :id, "--memory", info[:mem], "--cpus", info[:cpus], "--hwvirtex", "on"]
+
+                config.vm.provision "shell", inline: <<-SHELL
+                    yum -q -y install epel-release
+                    yum -q -y install mc
+                    yum -q -y install screen
+                    mkdir /etc/yum/repos.d
+                    cd /etc/yum/repos.d
+                    wget https://www.apache.org/dist/bigtop/stable/repos/centos7/bigtop.repo                    yum -q -y install zookeeper-server
+                    yum -q -y install zookeeper-server
+                    mkdir /usr/lib/zookeeper/data
+                    mkdir /usr/lib/zookeeper/logs
+                    echo "#{index + 1}" > /usr/lib/zookeeper/data/myid
+                    systemctl enable zookeeper
+                    systemctl start zookeeper
+                SHELL
+
+            end # end provider
+        end # end config
+    end # end cluster
+end
+#
+# EOF
+#
