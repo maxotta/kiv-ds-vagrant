@@ -27,7 +27,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                     yum -q -y install screen
                     mkdir /etc/yum/repos.d
                     cd /etc/yum/repos.d
-                    wget https://www.apache.org/dist/bigtop/stable/repos/centos7/bigtop.repo                    yum -q -y install zookeeper-server
+                    wget https://www.apache.org/dist/bigtop/stable/repos/centos7/bigtop.repo
                     yum -q -y install zookeeper-server
                     mkdir /usr/lib/zookeeper/data
                     mkdir /usr/lib/zookeeper/logs
