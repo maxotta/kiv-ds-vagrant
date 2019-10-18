@@ -32,6 +32,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                     mkdir /usr/lib/zookeeper/data
                     mkdir /usr/lib/zookeeper/logs
                     echo "#{index + 1}" > /usr/lib/zookeeper/data/myid
+                    cp /vagrant/zookeeper.service /etc/systemd/system
+                    systemctl daemon-reload
                     systemctl enable zookeeper
                     systemctl start zookeeper
                 SHELL
