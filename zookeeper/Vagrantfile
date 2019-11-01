@@ -30,6 +30,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         yum -q -y install mc
         yum -q -y install screen
         yum -q -y install java-1.8.0-openjdk
+        yum -q -y install python36
+        yum -q -y install python36-devel
+        yum -q -y install python34-pip
+        pip3.4 install --upgrade pip
+        pip3.6 install kazoo
         mkdir /etc/yum/repos.d
         cd /etc/yum/repos.d
         wget https://www.apache.org/dist/bigtop/stable/repos/centos7/bigtop.repo
@@ -47,3 +52,14 @@ end
 #
 # EOF
 #
+
+# /etc/zookeeper/conf/zoo.cfg:
+
+# tickTime=2000
+# initLimit=10
+# syncLimit=5
+# dataDir=/usr/lib/zookeeper/data
+# clientPort=2181
+# server.1=10.0.1.11:2888:3888
+# server.2=10.0.1.12:2888:3888
+# server.3=10.0.1.13:2888:3888
