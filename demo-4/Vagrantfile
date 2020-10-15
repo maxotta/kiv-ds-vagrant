@@ -24,6 +24,9 @@ Vagrant.configure("2") do |config|
           "webservers" => ["webserver-1"],
           "dbservers" => ["dbserver-1"],
           "servers:children" => ["webservers", "dbservers"],
+          "servers:vars" => {
+            "mdns_subnet" => "10.0.1.0"
+          },
           "dbservers:vars" => {
             "db_access_subnet" => "10.0.1.0/8"
           }

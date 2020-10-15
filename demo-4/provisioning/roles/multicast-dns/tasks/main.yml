@@ -1,0 +1,43 @@
+#
+- name: Install mDNS daemon
+  yum:
+    name: avahi
+    state: present
+
+- name: Install mDNS tools
+  yum:
+    name: avahi-tools
+    state: present
+
+- name: Name services switch for mDNS
+  yum:
+    name: nss-mdns
+    state: present
+
+- name: determine interface for mDNS
+  shell: route | awk '/{{ mdns_subnet }}/{ print $8 }'
+  register: result
+
+- set_fact:
+    mcast_iface: "{{ result.stdout_lines | first }}"
+
+- debug:
+    msg: "Configuring mDNS on '{{ mcast_iface }}'"
+
+- name: stop avahi daemon
+  systemd:
+    name: avahi-daemon
+    state: stopped
+
+- name: setup avahi daemon
+  blockinfile:
+    path: /etc/avahi/avahi-daemon.conf
+    insertafter: "^\\[server\\]"
+    block: |
+      allow-interfaces={{ mcast_iface }}
+      deny-interfaces=lo
+
+- name: start avahi daemon
+  systemd:
+    name: avahi-daemon
+    state: started

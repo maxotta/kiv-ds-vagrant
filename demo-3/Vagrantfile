@@ -16,16 +16,17 @@ Vagrant.configure("2") do |config|
         SHELL
     end
   
-    # config.vm.define "dbserver" do |cfg|
-    #     cfg.vm.network "private_network", ip: "10.0.1.11"
-    #     cfg.vm.hostname = "dbserver"
-    #     cfg.vm.provision "shell", #TODO: postgresql-setup initdb
-    #         inline: <<-SHELL
-    #             yum -q -y install epel-release
-    #             yum -q -y install mc
-    #             yum -q -y install postgresql-server
-    #             systemctl start postgresql
-    #         SHELL
-    # end
+    config.vm.define "dbserver" do |cfg|
+        cfg.vm.network "private_network", ip: "10.0.1.11"
+        cfg.vm.hostname = "dbserver"
+        cfg.vm.provision "shell", #TODO: postgresql-setup initdb
+            inline: <<-SHELL
+                yum -q -y install epel-release
+                yum -q -y install mc
+                yum -q -y install postgresql-server
+            SHELL
+    end
 
 end
+
+#                 systemctl start postgresql
