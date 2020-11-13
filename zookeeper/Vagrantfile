@@ -1,9 +1,13 @@
+require 'json'
+
 VAGRANTFILE_API_VERSION = "2"
 
-cluster = {
-  "node-1" => { :ip => "10.0.1.11", :cpus => 1, :mem => 1024 },
-  "node-2" => { :ip => "10.0.1.12", :cpus => 1, :mem => 1024 },
-  "node-3" => { :ip => "10.0.1.13", :cpus => 1, :mem => 1024 }
+ENV['ANSIBLE_ROLES_PATH'] = "../ansible/roles/"
+
+ensemble = {
+  "znode-1" => { :zid => 1, :ip => "10.0.1.11", :cpus => 1, :mem => 1024 },
+  "znode-2" => { :zid => 2, :ip => "10.0.1.12", :cpus => 1, :mem => 1024 },
+  "znode-3" => { :zid => 3, :ip => "10.0.1.13", :cpus => 1, :mem => 1024 }
 }
  
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -12,54 +16,43 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.box = "geerlingguy/centos7"
     config.ssh.insert_key = false
 
-    cluster.each_with_index do |(hostname, info), index|
+    ensemble.each_with_index do |(hostname, info), index|
 
         config.vm.define hostname do |cfg|
             cfg.vm.provider :virtualbox do |vb, override|
                 override.vm.network :private_network, ip: "#{info[:ip]}"
+                override.vm.network "forwarded_port", guest: 2181, host: (8080 + info[:zid])
                 override.vm.hostname = hostname
                 vb.name = hostname
                 vb.customize ["modifyvm", :id, "--memory", info[:mem], "--cpus", info[:cpus], "--hwvirtex", "on"]
             end # end provider
         end # end config
 
-    end # end cluster
+    end # end ensemble
 
-    config.vm.provision :shell, inline: <<-SHELL
-        yum -q -y install epel-release
-        yum -q -y install mc
-        yum -q -y install screen
-        yum -q -y install java-1.8.0-openjdk
-        yum -q -y install python36
-        yum -q -y install python36-devel
-        yum -q -y install python34-pip
-        pip3.4 install --upgrade pip
-        pip3.6 install kazoo
-        mkdir /etc/yum/repos.d
-        cd /etc/yum/repos.d
-        wget https://www.apache.org/dist/bigtop/stable/repos/centos7/bigtop.repo
-        yum -q -y install zookeeper-server
-        mkdir -p /usr/lib/zookeeper/data
-        mkdir -p /usr/lib/zookeeper/logs
-        hostname | awk -F - '{ print $2 }' > /usr/lib/zookeeper/data/myid
-        cp /vagrant/zookeeper.service /etc/systemd/system
-        systemctl daemon-reload
-        systemctl enable zookeeper
-        systemctl start zookeeper
-    SHELL
+    # Ansible provisioning, see:
+    # * https://www.vagrantup.com/docs/provisioning/ansible_common
+    # * https://docs.ansible.com/ansible/latest/index.html
+    #
+    config.vm.provision :ansible do |ansible|
+        ansible.compatibility_mode = "2.0"
+        ansible.playbook = "zookeeper-playbook.yml"
+        ansible.groups = {
+            "zookeeper_ensemble" => [
+                "znode-1",
+                "znode-2",
+                "znode-3"
+            ],
+            "all:vars" => {
+                "mdns_subnet" => "10.0.1.0"
+            },
+            "zookeeper_ensemble:vars" => {
+                "ensemble" => ensemble.to_json
+            }
+        }
+    end
 
 end
 #
 # EOF
 #
-
-# /etc/zookeeper/conf/zoo.cfg:
-
-# tickTime=2000
-# initLimit=10
-# syncLimit=5
-# dataDir=/usr/lib/zookeeper/data
-# clientPort=2181
-# server.1=10.0.1.11:2888:3888
-# server.2=10.0.1.12:2888:3888
-# server.3=10.0.1.13:2888:3888

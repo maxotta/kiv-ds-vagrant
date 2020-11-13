@@ -1,0 +1,9 @@
+---
+  - name: Install and setup single ZooKeeper node
+    include: "setup-node.yml" 
+
+  - name: Setup Zookeeper ansemble
+    include: "setup-ensemble.yml"
+
+  - name: Setup Zookeeper Python libs
+    include: "setup-python-libs.yml"

@@ -1,0 +1,38 @@
+- name: ZooKeeper ensemble configuration dump
+  debug:
+    msg: "{{ ensemble }}"
+
+- name: Set ZooKeeper node ID
+  set_fact:
+    my_id: "{{ ensemble[inventory_hostname]['zid'] }}"
+
+- name: Show ZooKeeper node ID
+  debug:
+    msg: "ZooKeeper Node ID: {{ my_id }}"
+
+- name: Create ID file
+  lineinfile:
+    path: "{{ zookeeper_home }}/data/myid"
+    create: yes
+    state: present
+    line: "{{ my_id }}"
+
+- name: Using dict2items
+  lineinfile:
+    path: "{{ zookeeper_home }}/conf/zoo.cfg"
+    state: present
+    insertafter: EOF
+    line: "server.{{ item.value['zid'] }}={{ item.key }}.local:2888:3888"
+  loop: "{{ ensemble | dict2items }}"
+
+- name: Using dict2items
+  debug:
+    msg: "server.{{ item.value['zid'] }}={{ item.key }}.local:2888:3888"
+  loop: "{{ ensemble | dict2items }}"
+
+- name: activate ZooKeeper service
+  systemd:
+    name: zookeeper
+    enabled: yes
+    state: started
+    daemon_reload: yes

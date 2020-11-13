@@ -1,0 +1,65 @@
+VAGRANTFILE_API_VERSION = "2"
+
+cluster = {
+  "node-1" => { :ip => "10.0.1.11", :cpus => 1, :mem => 1024 },
+  "node-2" => { :ip => "10.0.1.12", :cpus => 1, :mem => 1024 },
+  "node-3" => { :ip => "10.0.1.13", :cpus => 1, :mem => 1024 }
+}
+ 
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+    config.vm.synced_folder ".", "/vagrant"
+    config.vm.box = "geerlingguy/centos7"
+    config.ssh.insert_key = false
+
+    cluster.each_with_index do |(hostname, info), index|
+
+        config.vm.define hostname do |cfg|
+            cfg.vm.provider :virtualbox do |vb, override|
+                override.vm.network :private_network, ip: "#{info[:ip]}"
+                override.vm.hostname = hostname
+                vb.name = hostname
+                vb.customize ["modifyvm", :id, "--memory", info[:mem], "--cpus", info[:cpus], "--hwvirtex", "on"]
+            end # end provider
+        end # end config
+
+    end # end cluster
+
+    config.vm.provision :shell, inline: <<-SHELL
+        yum -q -y install epel-release
+        yum -q -y install mc
+        yum -q -y install screen
+        yum -q -y install java-1.8.0-openjdk
+        yum -q -y install python36
+        yum -q -y install python36-devel
+        yum -q -y install python34-pip
+        pip3.4 install --upgrade pip
+        pip3.6 install kazoo
+        mkdir /etc/yum/repos.d
+        cd /etc/yum/repos.d
+        wget https://www.apache.org/dist/bigtop/stable/repos/centos7/bigtop.repo
+        yum -q -y install zookeeper-server
+        mkdir -p /usr/lib/zookeeper/data
+        mkdir -p /usr/lib/zookeeper/logs
+        hostname | awk -F - '{ print $2 }' > /usr/lib/zookeeper/data/myid
+        cp /vagrant/zookeeper.service /etc/systemd/system
+        systemctl daemon-reload
+        systemctl enable zookeeper
+        systemctl start zookeeper
+    SHELL
+
+end
+#
+# EOF
+#
+
+# /etc/zookeeper/conf/zoo.cfg:
+
+# tickTime=2000
+# initLimit=10
+# syncLimit=5
+# dataDir=/usr/lib/zookeeper/data
+# clientPort=2181
+# server.1=10.0.1.11:2888:3888
+# server.2=10.0.1.12:2888:3888
+# server.3=10.0.1.13:2888:3888

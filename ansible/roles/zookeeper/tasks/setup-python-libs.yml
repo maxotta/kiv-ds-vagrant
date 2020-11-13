@@ -1,0 +1,5 @@
+- name: install python library
+  pip:
+    executable: pip-3
+    name: kazoo
+
