@@ -1,3 +1,5 @@
+require 'json'
+
 VAGRANTFILE_API_VERSION = "2"
 
 ENV['ANSIBLE_ROLES_PATH'] = "../ansible/roles/"
@@ -19,6 +21,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         config.vm.define hostname do |cfg|
             cfg.vm.provider :virtualbox do |vb, override|
                 override.vm.network :private_network, ip: "#{info[:ip]}"
+                override.vm.network "forwarded_port", guest: 2181, host: (8080 + info[:zid])
                 override.vm.hostname = hostname
                 vb.name = hostname
                 vb.customize ["modifyvm", :id, "--memory", info[:mem], "--cpus", info[:cpus], "--hwvirtex", "on"]
@@ -27,6 +30,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     end # end ensemble
 
+    # Ansible provisioning, see:
+    # * https://www.vagrantup.com/docs/provisioning/ansible_common
+    # * https://docs.ansible.com/ansible/latest/index.html
+    #
     config.vm.provision :ansible do |ansible|
         ansible.compatibility_mode = "2.0"
         ansible.playbook = "zookeeper-playbook.yml"
@@ -40,7 +47,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                 "mdns_subnet" => "10.0.1.0"
             },
             "zookeeper_ensemble:vars" => {
-                ensemble => "#{ensemble}"
+                "ensemble" => ensemble.to_json
             }
         }
     end
@@ -49,14 +56,3 @@ end
 #
 # EOF
 #
-
-# /etc/zookeeper/conf/zoo.cfg:
-
-# tickTime=2000
-# initLimit=10
-# syncLimit=5
-# dataDir=/usr/lib/zookeeper/data
-# clientPort=2181
-# server.1=10.0.1.11:2888:3888
-# server.2=10.0.1.12:2888:3888
-# server.3=10.0.1.13:2888:3888

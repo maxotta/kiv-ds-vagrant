@@ -1,10 +1,13 @@
 ---
-- name: Setup ZooKeeper Ensemble
+- name: Basic setup of all nodes
   hosts: all
   become: true
-  vars:
-    mdns_subnet: 10.0.1.0    
   roles:
     - common
     - multicast-dns
+
+- name: Setup of the ZooKeeper ensemble
+  hosts: zookeeper_ensemble
+  become: true
+  roles:
     - zookeeper

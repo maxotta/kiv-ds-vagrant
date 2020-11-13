@@ -1,0 +1,5 @@
+---
+  zookeeper_download_url: "https://downloads.apache.org/zookeeper/zookeeper-3.5.8/apache-zookeeper-3.5.8-bin.tar.gz"
+  zookeeper_home: "/opt/zookeeper"
+  zookeeper_user: "zookeeper"
+  zookeeper_group: "zookeeper"
