@@ -3,7 +3,6 @@
     hosts: servers
     become: true
     roles:
-      - common
       - multicast-dns
   
   - name: Web servers setup
