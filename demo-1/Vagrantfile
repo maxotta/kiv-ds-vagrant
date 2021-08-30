@@ -5,10 +5,8 @@
 
 # vagrant centos config.vm.provider "docker" sshd
 VAGRANTFILE_API_VERSION = "2"
-
 # set docker as the default provider
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
-
 # disable parallellism so that the containers come up in order
 ENV['VAGRANT_NO_PARALLEL'] = "1"
 ENV['FORWARD_DOCKER_PORTS'] = "1"
@@ -19,28 +17,39 @@ unless Vagrant.has_plugin?("vagrant-docker-compose")
   exit
 end
 
+# URL to the base Docker image
+DOCKER_IMAGE = "ghcr.io/maxotta/kiv-ds-docker:v0.9.0"
+# Node definitions
+NODE1 = { :name => "node1", :ipaddr => "10.0.1.11" }
+NODE2 = { :name => "node2", :ipaddr => "10.0.1.12" }
+
+# Common configuration
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder ".", "/vagrant", docker_consistency: "cached"
   config.ssh.insert_key = false
   
-  config.vm.define "testserver1" do |s|
-    s.vm.network "private_network", ip: "10.0.1.11"
-    s.vm.hostname = "testserver1"
+# Definition of node1
+  config.vm.define NODE1[:name] do |s|
+    s.vm.network "private_network", ip: NODE1[:ipaddr]
+    s.vm.hostname = NODE1[:name]
     s.vm.provider "docker" do |d|
-      d.image = "ghcr.io/maxotta/kiv-ds-docker:master"
-      d.name = "testserver1"
+      d.image = DOCKER_IMAGE
+      d.name = NODE1[:name]
       d.has_ssh = true
     end
+    s.vm.post_up_message = "Node #{NODE1[:name]} up and running. You can access the node with 'vagrant ssh #{NODE1[:name]}'}"
   end
 
-  config.vm.define "testserver2" do |s|
-    s.vm.network "private_network", ip: "10.0.1.12"
-    s.vm.hostname = "testserver2"
+# Definition of node2
+  config.vm.define NODE2[:name] do |s|
+    s.vm.network "private_network", ip: NODE2[:ipaddr]
+    s.vm.hostname = NODE2[:name]
     s.vm.provider "docker" do |d|
-      d.image = "ghcr.io/maxotta/kiv-ds-docker:master"
-      d.name = "testserver2"
+      d.image = DOCKER_IMAGE
+      d.name = NODE2[:name]
       d.has_ssh = true
     end
+    s.vm.post_up_message = "Node #{NODE2[:name]} up and running. You can access the node with 'vagrant ssh #{NODE2[:name]}'}"
   end
 
 end
