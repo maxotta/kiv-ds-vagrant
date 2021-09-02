@@ -1,6 +1,6 @@
 #
 # *** Demo 1
-# Create one simple node
+# Create two identical simple nodes
 #
 
 # vagrant centos config.vm.provider "docker" sshd
@@ -25,7 +25,7 @@ NODE2 = { :name => "node2", :ipaddr => "10.0.1.12" }
 
 # Common configuration
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.synced_folder ".", "/vagrant", docker_consistency: "cached"
+  config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: ".*/"
   config.ssh.insert_key = false
   
 # Definition of node1

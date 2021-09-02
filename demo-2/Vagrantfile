@@ -1,23 +1,65 @@
 #
 # *** Demo 2
-# Create two nodes with gived IP addresses and names
+# Create two nodes and setup the 1st as a frontend webserver and the 2nd as a REST API backend
 #
 
-Vagrant.configure("2") do |config|
-    # shared folder - the current project directory is mounted at /vagrant on both nodes
-    config.vm.synced_folder ".", "/vagrant"
+# vagrant centos config.vm.provider "docker" sshd
+VAGRANTFILE_API_VERSION = "2"
+# set docker as the default provider
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
+# disable parallellism so that the containers come up in order
+ENV['VAGRANT_NO_PARALLEL'] = "1"
+ENV['FORWARD_DOCKER_PORTS'] = "1"
 
-    config.vm.define "webserver" do |ws|
-        ws.vm.box = "centos/8"
-        ws.vm.network "private_network", ip: "10.0.1.10"
-        ws.vm.hostname = "webserver"
-    end
+unless Vagrant.has_plugin?("vagrant-docker-compose")
+  system("vagrant plugin install vagrant-docker-compose")
+  puts "Dependencies installed, please try the command again."
+  exit
+end
+
+# URL to the base Docker image
+DOCKER_IMAGE = "ghcr.io/maxotta/kiv-ds-docker:v0.9.0"
+# Node definitions
+NODE1 = { :name => "frontend", :ipaddr => "10.0.1.11" }
+NODE2 = { :name => "backend", :ipaddr => "10.0.1.12" }
+
+# Common configuration
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: ".*/"
+  config.ssh.insert_key = false
   
-    config.vm.define "dbserver" do |db|
-        db.vm.box = "centos/8"
-        db.vm.network "private_network", ip: "10.0.1.11"
-        db.vm.hostname = "dbserver"
+# Definition of node1
+  config.vm.define NODE1[:name] do |s|
+    s.vm.network "private_network", ip: NODE1[:ipaddr]
+    s.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "0.0.0.0"
+    s.vm.hostname = NODE1[:name]
+    s.vm.provider "docker" do |d|
+      d.image = DOCKER_IMAGE
+      d.name = NODE1[:name]
+      d.has_ssh = true
     end
+    s.vm.provision "shell", inline: <<-SHELL
+        yum -q -y install epel-release
+        yum -q -y install nginx
+        rm -rf /usr/share/nginx/html
+        cp -r /vagrant/resources/html /usr/share/nginx
+        /usr/sbin/nginx
+    SHELL
+    s.vm.post_up_message = "Node #{NODE1[:name]} up and running. You can access the node with 'vagrant ssh #{NODE1[:name]}'}"
+  end
+
+# Definition of node2
+  config.vm.define NODE2[:name] do |s|
+    s.vm.network "private_network", ip: NODE2[:ipaddr]
+    s.vm.hostname = NODE2[:name]
+    s.vm.provider "docker" do |d|
+      d.image = DOCKER_IMAGE
+      d.name = NODE2[:name]
+      d.has_ssh = true
+    end
+    s.vm.post_up_message = "Node #{NODE2[:name]} up and running. You can access the node with 'vagrant ssh #{NODE2[:name]}'}"
+  end
+
 end
 
 # EOF
