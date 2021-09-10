@@ -20,44 +20,38 @@ end
 # URL to the base Docker image
 DOCKER_IMAGE = "ghcr.io/maxotta/kiv-ds-docker:v0.9.0"
 # Node definitions
-NODE1 = { :name => "frontend", :ipaddr => "10.0.1.11" }
-NODE2 = { :name => "backend", :ipaddr => "10.0.1.12" }
+BACKEND   = { :name => "backend",  :ipaddr => "10.0.1.11", :image => "ds/demo-2/backend:0.1" }
+FRONTEND  = { :name => "frontend", :ipaddr => "10.0.1.12", :image => "ds/demo-2/frontend:0.1"  }
 
 # Common configuration
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: ".*/"
   config.ssh.insert_key = false
   
-# Definition of node1
-  config.vm.define NODE1[:name] do |s|
-    s.vm.network "private_network", ip: NODE1[:ipaddr]
-    s.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "0.0.0.0"
-    s.vm.hostname = NODE1[:name]
-    s.vm.provider "docker" do |d|
-      d.image = DOCKER_IMAGE
-      d.name = NODE1[:name]
-      d.has_ssh = true
-    end
-    s.vm.provision "shell", inline: <<-SHELL
-        yum -q -y install epel-release
-        yum -q -y install nginx
-        rm -rf /usr/share/nginx/html
-        cp -r /vagrant/resources/html /usr/share/nginx
-        /usr/sbin/nginx
-    SHELL
-    s.vm.post_up_message = "Node #{NODE1[:name]} up and running. You can access the node with 'vagrant ssh #{NODE1[:name]}'}"
+# Definition of BACKEND
+config.vm.define BACKEND[:name] do |s|
+  s.vm.network "private_network", ip: BACKEND[:ipaddr]
+  s.vm.hostname = BACKEND[:name]
+  s.vm.provider "docker" do |d|
+    d.image = BACKEND[:image]
+    d.name = BACKEND[:name]
+    d.has_ssh = true
   end
+  s.vm.post_up_message = "Node #{BACKEND[:name]} up and running. You can access the node with 'vagrant ssh #{BACKEND[:name]}'}"
+end
 
-# Definition of node2
-  config.vm.define NODE2[:name] do |s|
-    s.vm.network "private_network", ip: NODE2[:ipaddr]
-    s.vm.hostname = NODE2[:name]
+# Definition of FRONTEND
+  config.vm.define FRONTEND[:name] do |s|
+    s.vm.network "private_network", ip: FRONTEND[:ipaddr]
+    # Forward port 80 in the container to port 8080 on the host machine. Listen on 0.0.0.0 (all interfaces)
+    s.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "0.0.0.0"
+    s.vm.hostname = FRONTEND[:name]
     s.vm.provider "docker" do |d|
-      d.image = DOCKER_IMAGE
-      d.name = NODE2[:name]
+      d.image = FRONTEND[:image]
+      d.name = FRONTEND[:name]
       d.has_ssh = true
     end
-    s.vm.post_up_message = "Node #{NODE2[:name]} up and running. You can access the node with 'vagrant ssh #{NODE2[:name]}'}"
+    s.vm.post_up_message = "Node #{FRONTEND[:name]} up and running. You can access the node with 'vagrant ssh #{FRONTEND[:name]}'}"
   end
 
 end
