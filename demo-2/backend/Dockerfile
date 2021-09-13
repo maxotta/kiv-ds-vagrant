@@ -2,8 +2,8 @@
 # Simple backend demo server image
 #
 
-#FROM ghcr.io/maxotta/kiv-ds-docker:v0.9.0
-FROM max/ds1:0.99.2
+FROM ghcr.io/maxotta/kiv-ds-docker:v0.9.1
+
 RUN yum -q -y install python3
 RUN pip3 install flask
 

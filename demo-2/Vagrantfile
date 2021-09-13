@@ -3,7 +3,6 @@
 # Create two nodes and setup the 1st as a frontend webserver and the 2nd as a REST API backend
 #
 
-# vagrant centos config.vm.provider "docker" sshd
 VAGRANTFILE_API_VERSION = "2"
 # set docker as the default provider
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
@@ -18,29 +17,42 @@ unless Vagrant.has_plugin?("vagrant-docker-compose")
 end
 
 # URL to the base Docker image
-DOCKER_IMAGE = "ghcr.io/maxotta/kiv-ds-docker:v0.9.0"
+#DOCKER_IMAGE = "ghcr.io/maxotta/kiv-ds-docker:v0.9.1"
+BACKEND_IMAGE  = "ds/demo-2/backend:0.1"
+FRONTEND_IMAGE = "ds/demo-2/frontend:0.1" 
+
 # Node definitions
-BACKEND   = { :name => "backend",  :ipaddr => "10.0.1.11", :image => "ds/demo-2/backend:0.1" }
-FRONTEND  = { :name => "frontend", :ipaddr => "10.0.1.12", :image => "ds/demo-2/frontend:0.1"  }
+BACKEND   = { :name => "backend",  :ipaddr => "10.0.1.11", :image => BACKEND_IMAGE }
+FRONTEND  = { :name => "frontend", :ipaddr => "10.0.1.12", :image => FRONTEND_IMAGE }
 
 # Common configuration
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  # Before the 'vagrant up' command is started, build docker images:
+  config.trigger.before :up do |trigger|
+    trigger.name = "Build docker images"
+    trigger.ruby do |env, machgine|
+      `docker build backend -t "#{BACKEND_IMAGE}"`
+      `docker build frontend -t "#{FRONTEND_IMAGE}"`
+    end
+  end
+
   config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: ".*/"
   config.ssh.insert_key = false
   
-# Definition of BACKEND
-config.vm.define BACKEND[:name] do |s|
-  s.vm.network "private_network", ip: BACKEND[:ipaddr]
-  s.vm.hostname = BACKEND[:name]
-  s.vm.provider "docker" do |d|
-    d.image = BACKEND[:image]
-    d.name = BACKEND[:name]
-    d.has_ssh = true
+  # Definition of BACKEND
+  config.vm.define BACKEND[:name] do |s|
+    s.vm.network "private_network", ip: BACKEND[:ipaddr]
+    s.vm.hostname = BACKEND[:name]
+    s.vm.provider "docker" do |d|
+      d.image = BACKEND[:image]
+      d.name = BACKEND[:name]
+      d.has_ssh = true
+    end
+    s.vm.post_up_message = "Node #{BACKEND[:name]} up and running. You can access the node with 'vagrant ssh #{BACKEND[:name]}'}"
   end
-  s.vm.post_up_message = "Node #{BACKEND[:name]} up and running. You can access the node with 'vagrant ssh #{BACKEND[:name]}'}"
-end
 
-# Definition of FRONTEND
+  # Definition of FRONTEND
   config.vm.define FRONTEND[:name] do |s|
     s.vm.network "private_network", ip: FRONTEND[:ipaddr]
     # Forward port 80 in the container to port 8080 on the host machine. Listen on 0.0.0.0 (all interfaces)
@@ -50,6 +62,7 @@ end
       d.image = FRONTEND[:image]
       d.name = FRONTEND[:name]
       d.has_ssh = true
+      d.env = { "STARTUP_DELAY": "60" } # minor hack to ensure backend is already running when the frontend wakes up
     end
     s.vm.post_up_message = "Node #{FRONTEND[:name]} up and running. You can access the node with 'vagrant ssh #{FRONTEND[:name]}'}"
   end
