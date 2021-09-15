@@ -18,21 +18,21 @@ def get_service(name):
 def home():
     return '<html><head><title>Find service</title></head>' + \
            '<body><h2>Find service</h2>' + \
-           'Usage example: http://hostname:port/service-api/find/echo</body></html>'
+           'Usage example: http://hostname:port/service-api/find/echo</body></html>\n'
 
 
 @app.route('/find/<name>')
 def find(name):
     result = list(get_service(name))
-    response = '<html><head><title>Find service</title></head><body>'
+    response = '<html><head><title>Find service</title></head><body>\n'
     if len(result) > 0:
-        response = response + '<h2>Results:</h2><ul>'
+        response = response + '<h2>Results:</h2><ul>\n'
         for row in result:
             response = response + f'<li>{row}'
         response = response + '</ul>'
     else:
-        response = response + '<b>Service not found.</b>'
-    response = response + '</body></html>'
+        response = response + '<b>Service not found.</b>\n'
+    response = response + '</body></html>\n'
     return response
 
 
