@@ -17,39 +17,21 @@ unless Vagrant.has_plugin?("vagrant-docker-compose")
   exit
 end
 
-# URL to the base Docker image
-DOCKER_IMAGE = "ghcr.io/maxotta/kiv-ds-docker:v0.9.0"
-# Node definitions
-NODE1 = { :name => "node1", :ipaddr => "10.0.1.11" }
-NODE2 = { :name => "node2", :ipaddr => "10.0.1.12" }
-
-# Common configuration
+# Vagrant common configuration
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: ".*/"
   config.ssh.insert_key = false
   
 # Definition of node1
-  config.vm.define NODE1[:name] do |s|
-    s.vm.network "private_network", ip: NODE1[:ipaddr]
-    s.vm.hostname = NODE1[:name]
+  config.vm.define "node1" do |s|
+    s.vm.network "private_network", ip: "10.0.1.11"
+    s.vm.hostname = "node1"
     s.vm.provider "docker" do |d|
-      d.image = DOCKER_IMAGE
-      d.name = NODE1[:name]
+      d.image = "ghcr.io/maxotta/kiv-ds-docker:v0.9.0"
+      d.name = "node1"
       d.has_ssh = true
     end
-    s.vm.post_up_message = "Node #{NODE1[:name]} up and running. You can access the node with 'vagrant ssh #{NODE1[:name]}'}"
-  end
-
-# Definition of node2
-  config.vm.define NODE2[:name] do |s|
-    s.vm.network "private_network", ip: NODE2[:ipaddr]
-    s.vm.hostname = NODE2[:name]
-    s.vm.provider "docker" do |d|
-      d.image = DOCKER_IMAGE
-      d.name = NODE2[:name]
-      d.has_ssh = true
-    end
-    s.vm.post_up_message = "Node #{NODE2[:name]} up and running. You can access the node with 'vagrant ssh #{NODE2[:name]}'}"
+    s.vm.post_up_message = "The node up and running. You can access the node with 'vagrant ssh node1'}"
   end
 
 end

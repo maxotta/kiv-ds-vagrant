@@ -1,10 +1,12 @@
-# Demo 2
+# ![DS Logo](../images/icon-32-ds.png) Demo 2
 
 The aim of this demo is to show how to:
 * spin up 2 nodes using Vagrant
 * how to build your own Docker images by extending the prepared Docker base image [kiv-ds-docker](https://github.com/maxotta/kiv-ds-docker/pkgs/container/kiv-ds-docker) and use them in you own projects
 * how to map container ports
 * how to access applications/services running inside containers
+
+## Deployment diagram
 
 ![Demo 2 deployment diagram](images/demo-2-deployment.png)
 
@@ -47,6 +49,7 @@ Now, when you know the IP address, you can access the service also from outside 
 
  If you think you've played enough with this demo, just run the `vagrant destroy -f` command.
 
+---
 
 
 
