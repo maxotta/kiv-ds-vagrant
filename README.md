@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This repository servers as a collection of small demo projects for students enrolled to the [Distributed Systems course](https://portal.zcu.cz/StagPortletsJSR168/CleanUrl?urlid=prohlizeni-predmet-sylabus&predmetZkrPrac=KIV&predmetZkrPred=DS&predmetRok=2021&predmetSemestr=ZS&plang=en) taught at [DCSE](http://www.kiv.zcu.cz/en/education/index.html) / [UWB](https://www.zcu.cz/en/index.html)
+This repository serves as a collection of small demo projects for students enrolled to the [Distributed Systems course](https://portal.zcu.cz/StagPortletsJSR168/CleanUrl?urlid=prohlizeni-predmet-sylabus&predmetZkrPrac=KIV&predmetZkrPred=DS&predmetRok=2021&predmetSemestr=ZS&plang=en) taught at [DCSE](http://www.kiv.zcu.cz/en/education/index.html) / [UWB](https://www.zcu.cz/en/index.html)
 
 ## Required Software
 
@@ -24,8 +24,13 @@ You will need [Git](https://git-scm.com/downloads) the be able to clone this rep
 
 ### ![Docker](images/icon-32-docker.png) Docker
 
-All nodes/services of the provided distributed systems examples are running inside [Containers](https://www.docker.com/resources/what-container)
+All nodes/services of the provided distributed systems examples are running inside [Containers](https://www.docker.com/resources/what-container). Containers are simple and lightweight and do not consume much of your computer's resources unlike virtual machines.
 
 ### ![Vagrant](images/icon-32-vagrant.png) Vagrant
+
+The [Vagrant tool](https://www.vagrantup.com/intro) will help us to easily set-up and dispose distributed systems consisting of multiple nodes. With Vagrant, you will start to [think about the infrastructure like of code (IaC)](https://www.redhat.com/en/topics/automation/what-is-infrastructure-as-code-iac). A good intro to IaC (in czech language) can be found at [Zdrojak.CZ](https://zdrojak.cz/clanky/infrastructure-as-code-lehky-uvod/)
+
+However, the official intro to Vagrant aptly states that *Vagrant is a tool for building and managing virtual machine environments in a single workflow. With an easy-to-use workflow and focus on automation, Vagrant lowers development environment setup time, increases production parity, and makes the "works on my machine" excuse a relic of the past.* :-)
+
 
 ---
