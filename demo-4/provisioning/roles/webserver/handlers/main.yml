@@ -1,3 +1,0 @@
----
-  - name: restart firewall
-    shell: firewall-cmd --reload
