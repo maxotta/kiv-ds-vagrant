@@ -14,7 +14,8 @@ If you want to play with the provided examples you will need one of the followin
 ![macOS](images/icon-32-macos.png) [macOS](https://en.wikipedia.org/wiki/MacOS) from [Apple](https://www.apple.com/)
 
 ![Win](images/icon-32-win.png) [Windows Subsystem for Linux - WSL2](https://docs.microsoft.com/en-us/windows/wsl/about) from [Microsoft](https://www.microsoft.com/)
-    * See also: [WSL2 Installation instructions for Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
+
+* See also: [WSL2 Installation instructions for Windows 10](https://docs.microsoft.com/en-us/windows/wsl/install-win10)
 
 If you encounter difficulties with setting up the following software, please don't waste your time and install a Debian or Ubuntu based Linux distro inside a VM on the [Oracle VirtualBox](https://www.virtualbox.org/wiki/Downloads) and use it as your development environment.
 
