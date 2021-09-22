@@ -1,3 +1,0 @@
----
-dependencies:
-  - { role: postgresql10-setup } 

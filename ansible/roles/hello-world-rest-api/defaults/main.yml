@@ -1,7 +1,0 @@
----
-  hello_service_archive: java/build/distributions/hello-world-rest-api.tar
-
-  hello_service_home: /opt/hello-world-rest-api
-  hello_service_user: hello
-  hello_service_group: hello
-  hello_service_port: 8080

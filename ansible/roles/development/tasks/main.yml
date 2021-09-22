@@ -1,6 +1,0 @@
-#
-# Install development tools
-#
-- name: install development tools
-  yum:
-    name: "@Development Tools"

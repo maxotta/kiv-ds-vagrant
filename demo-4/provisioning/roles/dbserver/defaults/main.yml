@@ -1,7 +1,0 @@
----
-  pg_rpm_repo: https://download.postgresql.org/pub/repos/yum/10/redhat/rhel-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
-
-  pg_bin_dir: /usr/pgsql-10/bin
-  pg_data_dir: /var/lib/pgsql/10/data
-
-  pg_db_encoding: UTF-8

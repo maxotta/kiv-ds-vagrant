@@ -1,9 +1,0 @@
----
-  - name: restart firewall
-    shell: firewall-cmd --reload
-
-  - name: restart the PostgreSQL server
-    service:
-      name: postgresql-10
-      enabled: yes
-      state: restarted

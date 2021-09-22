@@ -1,9 +1,0 @@
-local   all             postgres                           peer
-{% if pg_db_owner_allow_local_access and pg_db_owner is defined %}
-local   all             {{ pg_db_owner }}                  peer
-{% endif %}
-host    all             all             127.0.0.1/32       md5
-host    all             all             ::1/128            md5
-{% if db_maintenance_subnet is defined %}
-host    all             all             {{ db_maintenance_subnet }}    md5
-{% endif %}
