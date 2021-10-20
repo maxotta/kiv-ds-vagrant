@@ -104,7 +104,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         d.image = CLIENT[:image]
         d.name = node_name
         d.has_ssh = true
-        d.env = { "ZOO_HOSTS" => "#{zoo_client_hosts}" }
+        d.env = { " " => "#{zoo_client_hosts}" }
       end
       s.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'}"
     end
@@ -129,27 +129,15 @@ end
 #
 # https://hub.docker.com/r/elkozmon/zoonavigator
 #
-
-
-
-
-# ZOOCFGDIR=/conf
-# ZOO_ADMINSERVER_ENABLED=true
-# ZOO_AUTOPURGE_PURGEINTERVAL=0
-# ZOO_AUTOPURGE_SNAPRETAINCOUNT=3
-# ZOO_CONF_DIR=/conf
-# ZOO_DATA_DIR=/data
-# ZOO_DATA_LOG_DIR=/datalog
-# ZOO_INIT_LIMIT=5
-# ZOO_LOG_DIR=/logs
-# ZOO_MAX_CLIENT_CNXNS=60
-# ZOO_MY_ID=3
-# ZOO_SERVERS='server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181'
-# ZOO_STANDALONE_ENABLED=true
-# ZOO_SYNC_LIMIT=2
-# ZOO_TICK_TIME=2000
-
-
-# docker run -d --network host -e HTTP_PORT=9000 --name zoonavigator --restart unless-stopped elkozmon/zoonavigator:latest
-
-# https://farid-baharuddin.medium.com/setting-up-an-apache-zookeeper-cluster-in-docker-8960d5c23f5c
+# docker run \
+#   -d --network host \
+#   -e HTTP_PORT=9000 \
+#   --name zoonavigator \
+#   --restart unless-stopped \
+#   elkozmon/zoonavigator:latest
+#
+# http://localhost:9000
+#
+#
+# https://kazoo.readthedocs.io/en/latest/basic_usage.html
+#
