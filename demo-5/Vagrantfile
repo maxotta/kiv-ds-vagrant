@@ -104,7 +104,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         d.image = CLIENT[:image]
         d.name = node_name
         d.has_ssh = true
-        d.env = { " " => "#{zoo_client_hosts}" }
+        d.env = { "ZOO_HOSTS" => "#{zoo_client_hosts}" }
       end
       s.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'}"
     end
