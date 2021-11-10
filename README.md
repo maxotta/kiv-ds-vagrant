@@ -4,6 +4,17 @@
 
 This repository serves as a collection of small demo projects for students enrolled to the [Distributed Systems course](https://portal.zcu.cz/StagPortletsJSR168/CleanUrl?urlid=prohlizeni-predmet-sylabus&predmetZkrPrac=KIV&predmetZkrPred=DS&predmetRok=2021&predmetSemestr=ZS&plang=en) taught at [DCSE](http://www.kiv.zcu.cz/en/education/index.html) / [UWB](https://www.zcu.cz/en/index.html)
 
+## Distributed systems demos
+
+The provided demos serve as a template and knowledge base for projects, that students work out in the Lab. The demos are:
+
+* [***Demo-1***](demo-1) - the simplest demo showing the basic use of Vagrant and Docker. Starts one Linux node running a SSH server.
+* [***Demo-2***](demo-2) - shows how to setup and start two connected nodes/containers. It's a simple frontend web server (proxy) connected to a backend server.
+* [***Demo-3***](demo-3) - extends demo-2 in making the backend scalable (N backend servers) and configures the proxy server to act as a load balancer.
+* [***Demo-4***](demo-4) - a basic demo of a single Apache ZooKeeper running in standalone mode and serving several clients.
+* [***Demo-5***](demo-5) - shows how to setup a cluster of ZooKeeper servers (ensemble).
+* [***Demo-6***](demo-6) - shows how to use Docker volumes in extending the previous demo with persistent data storage, so the ZooKeeper container can be removed, upgraded, etc. without any loss of data. Also, it shows how to setup and use container service health check provided by Docker.
+
 ## Required Software
 
 ### Operating Systems
