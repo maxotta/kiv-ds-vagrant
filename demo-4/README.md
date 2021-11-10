@@ -3,7 +3,7 @@
 The aim of this demo is to show how to:
 * Startup a single Zookeeper server
 * Use the client API - shown on Python API [Kazoo](https://kazoo.readthedocs.io/en/latest/)
-* Install and use the [Zookeeper navigator](https://hub.docker.com/r/elkozmon/zoonavigator) GUI
+* Install and use the [Zookeeper navigator](https://zoonavigator.elkozmon.com/en/latest/) GUI
 * Install and use the [Portainer](https://www.portainer.io/) Docker management GUI
 
 ## Deployment diagram
@@ -33,7 +33,7 @@ docker run -d -p 8000:8000 -p 9443:9443 --name portainer \
   -v portainer_data:/data \
   portainer/portainer-ce:latest
 ```
-When the container is running, point your browser to https://localhost:9443 (on WSL2 you need to know the IP address of the WSL2 gateway - see [Demo-2](../demo-2#accessing-the-deployed-services-on-windows-outside-from-wsl2)) and setup the administrator account password:
+When the container is running, point your browser to https://localhost:9443 (on WSL2 you need to know the IP address of the WSL2 gateway - see [Demo-2](../demo-2#access-wsl2)) and setup the administrator account password:
 
 ![Portainer administrator account setup](images/demo-4-portainer-init.png)
 
@@ -49,7 +49,7 @@ In the left vertical menu you can see all functions provided by the software, li
 
 *Figure 3: Portainer dashboard*
 
-or and overview of containers:
+or an overview of containers:
 
 ![Container list](images/demo-4-portainer-container-list.png)
 
@@ -59,7 +59,7 @@ In this view you can manage the containers, read container logs and connect to a
 
 ![Container console](images/demo-4-portainer-container-console.png)
 
-*Figure N: TODO*
+*Figure 5: Container console*
 
 The portainer will be started automatically each time you start the Docker service.
 
@@ -79,15 +79,16 @@ The Web GUI is accessible at http://localhost:9000 (in WSL2 use the gateway IP).
 
 ![Connect ZooNavigator](images/demo-4-zoonavigator-connect.png)
 
-*Figure N: TODO*
+*Figure 6: Connecting to the ZooNavigator*
 
 When you're connected, you can navigate through the hierachical data model:
 
 ![Browse ZooNavigator](images/demo-4-zoonavigator-browse-1.png)
 
-*Figure N: TODO*
+*Figure 7: Browsing the Zookeeper hierarchical data model*
 
 ## Basic Zookeeper API examples
+<a name="zk-api-examples"></a>
 
 The [provided examples](client/python) are written in the [Python programming language](https://www.python.org/) and using the [Kazoo Python Library](https://kazoo.readthedocs.io/en/latest/basic_usage.html) as an interface to the Zookeeper.
 
@@ -98,17 +99,25 @@ If you run it for the first time, the node ```/ds``` doesn't exist yet and you g
 
 ![Client 1 demo 1](images/demo-4-zoonavigator-client-1.png)
 
+*Figure 8: The client throws a NoNodeError exception*
+
 With ZooNavigator you can easily create the missing node:
 
 ![Client 1 demo 2](images/demo-4-zoonavigator-client-2.png)
+
+*Figure 9: Creating a new node in the ZooNavigator*
 
 and add some child nodes:
 
 ![Client 1 demo 3](images/demo-4-zoonavigator-client-4.png)
 
+*Figure 10: A node [/ds] with two child nodes [app1] and [app2]* 
+
 Now, if you run ```zk-client-1.py``` again, you should see the child nodes as in the listing bellow:
 
 ![Client 1 demo 4](images/demo-4-zoonavigator-client-5.png)
+
+*Figure 11: The client listing the two new child nodes*
 
 ### 2. Ephemeral node demo
 
@@ -119,6 +128,8 @@ python3 /opt/zk/client/zk-client-2.py
 from some ```client-N``` containers and watch in Zoonavigator for nodes appearing and disappearing (use 'reload') as child nodes of ```/ds/clients```:
 
 ![Client 2 demo 1](images/demo-4-example-2-1.png)
+
+*Figure 12: Ephemeral nodes [client-1] and [client-2] in the [/ds/clients] context*
 
 ### 3. Watch events demo
 

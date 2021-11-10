@@ -32,7 +32,7 @@ so we access the service via **http://localhost:8080**:
 *Picture 3: Accessing Demo-2 service from the host machine*
 
 ## Accessing the deployed services on Windows outside from WSL2
-
+<a name="access-wsl2"></a>
 The previous instructions work on Linux and inside the WSL2 environment on Windows. If you want to access the service from a web browser running on the Windows host machine, you need to know through which interface to access the WSL2 VM. You can figure this out by looking at the routing table inside WSL2:
 
 ![Demo 2 access WSL2 VM from outside](images/demo-2-host-access-ip.png)

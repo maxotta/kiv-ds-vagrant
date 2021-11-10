@@ -2,7 +2,7 @@
 # Setup image with NGINX as frontend (proxy) server
 #
 
-FROM ghcr.io/maxotta/kiv-ds-docker:v0.9.1
+FROM ghcr.io/maxotta/kiv-ds-docker:latest
 
 RUN yum -q -y install epel-release && \
     yum -q -y install nginx && \

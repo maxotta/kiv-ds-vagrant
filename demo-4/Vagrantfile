@@ -1,6 +1,6 @@
 #
-# *** Demo 5 - Zookeeper
-# Create N Zookeeper nodes and M clients.
+# *** Demo 4 - Zookeeper
+# Create 1 Zookeeper node and N clients.
 #
 
 VAGRANTFILE_API_VERSION = "2"

@@ -19,7 +19,6 @@ unless Vagrant.has_plugin?("vagrant-docker-compose")
 end
 
 # URL to the base Docker image
-#DOCKER_IMAGE = "ghcr.io/maxotta/kiv-ds-docker:v0.9.1"
 BACKEND_IMAGE  = "ds/demo-2/backend:0.1"
 FRONTEND_IMAGE = "ds/demo-2/frontend:0.1" 
 
