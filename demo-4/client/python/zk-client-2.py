@@ -1,11 +1,13 @@
 #
-# Zookeeper client demo 1
+# Zookeeper client demo 2
 #
-# Basic client listing children of a node.
+# Zookeper ephemeral node demo.
 
 import os
 import pprint as pp
 from kazoo.client import KazooClient
+import socket
+from time import sleep
 
 def main():
   ensemble = os.environ['ZOO_SERVERS']
@@ -13,8 +15,8 @@ def main():
   zk = KazooClient(hosts=ensemble)
   zk.start()
 
-  children = zk.get_children("/ds")
-  pp.pprint(children)
+  zk.create(f"/ds/clients/{ socket.gethostname() }", ephemeral=True, makepath=True)
+  sleep(15)
 
   zk.stop()
 
