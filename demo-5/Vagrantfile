@@ -1,0 +1,114 @@
+#
+# *** Demo 5 - Zookeeper
+# Create N Zookeeper nodes and M clients.
+#
+
+VAGRANTFILE_API_VERSION = "2"
+# set docker as the default provider
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
+# disable parallellism so that the containers come up in order
+ENV['VAGRANT_NO_PARALLEL'] = "1"
+ENV['FORWARD_DOCKER_PORTS'] = "1"
+# minor hack enabling to run the image and configuration trigger just once
+ENV['VAGRANT_EXPERIMENTAL']="typed_triggers"
+
+unless Vagrant.has_plugin?("vagrant-docker-compose")
+  system("vagrant plugin install vagrant-docker-compose")
+  puts "Dependencies installed, please try the command again."
+  exit
+end
+
+# Names of Docker images built:
+ZOONODE_IMAGE  = "ds/demo-5/zoonode:0.1"
+CLIENT_IMAGE   = "ds/demo-5/client:0.1"
+# Subnet to use:
+SUBNET = "10.0.1."
+
+# Node definitions
+ZOONODE = { :nameprefix => "zoonode-",
+            :subnet => SUBNET,
+            :ip_offset => 10, 
+            :image => ZOONODE_IMAGE
+          }
+CLIENT  = { :nameprefix => "client-",
+            :subnet => SUBNET,
+            :ip_offset => 100,
+            :image => CLIENT_IMAGE,
+            :config => "client/client.cfg"
+          }
+# Number of Zoonodes to start:
+ZOONODES_COUNT = 5 # this should be an odd number
+# Number of clients to start:
+CLIENTS_COUNT = 2
+
+zoo_servers = ""
+zoo_client_hosts = ""
+# Common configuration
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  # Before the 'vagrant up' command is started, build docker images:
+  config.trigger.before :up, type: :command do |trigger|
+    trigger.name = "Build docker images and configuration files"
+    trigger.ruby do |env, machine|
+        # --- start of Ruby script ---
+        # Build Zoonode list:
+        puts "Building Zoonode configuration."
+        zoo_ensemble = []
+        zoo_hosts = []
+        (1..ZOONODES_COUNT).each do |i|
+            zoo_ensemble << "server.#{i}=#{ZOONODE[:subnet]}#{ZOONODE[:ip_offset] + i}:2888:3888;2181"
+            zoo_hosts << "#{ZOONODE[:subnet]}#{ZOONODE[:ip_offset] + i}:2181"
+        end
+        zoo_servers = zoo_ensemble.join(" ")
+        zoo_client_hosts = zoo_hosts.join(",")
+        # Build Zoonode image:
+        puts "Building Zoonode image:"
+        `docker build zoonode -t "#{ZOONODE_IMAGE}"`
+        # Build client node image:
+        puts "Building client node image:"
+        `docker build client -t "#{CLIENT_IMAGE}"`
+        # --- end of Ruby script ---
+    end
+  end
+
+  config.ssh.insert_key = false
+
+  # Definition of N Zoonodes
+  (1..ZOONODES_COUNT).each do |i|
+    node_ip_addr = "#{ZOONODE[:subnet]}#{ZOONODE[:ip_offset] + i}"
+    node_name = "#{ZOONODE[:nameprefix]}#{i}"
+    # Definition of Zoonode
+    config.vm.define node_name do |s|
+      s.vm.network "private_network", ip: node_ip_addr
+      s.vm.hostname = node_name 
+      s.vm.provider "docker" do |d|
+        d.image = ZOONODE[:image]
+        d.name = node_name
+        d.has_ssh = true
+        d.env = { "ZOO_MY_ID" => i, "ZOO_SERVERS" => "#{zoo_servers}" }
+      end
+      s.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'}"
+    end
+  end
+
+  # Definition of N client nodes
+  (1..CLIENTS_COUNT).each do |i|
+    node_ip_addr = "#{CLIENT[:subnet]}#{CLIENT[:ip_offset] + i}"
+    node_name = "#{CLIENT[:nameprefix]}#{i}"
+    # Definition of client node
+    config.vm.define node_name do |s|
+      s.vm.network "private_network", ip: node_ip_addr
+      s.vm.hostname = node_name
+      s.vm.provider "docker" do |d|
+        d.image = CLIENT[:image]
+        d.name = node_name
+        d.has_ssh = true
+        d.env = { "ZOO_SERVERS" => "#{zoo_client_hosts}" }
+      end
+      s.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'}"
+    end
+  end
+
+end
+
+# EOF
