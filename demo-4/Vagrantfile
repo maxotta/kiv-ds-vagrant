@@ -53,6 +53,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     end
   end
 
+  config.vm.synced_folder ".", "/vagrant", disabled: true
   config.ssh.insert_key = false
 
   # Definition of Zoonode
