@@ -21,6 +21,7 @@ end
 # Names of Docker images built:
 ZOONODE_IMAGE  = "ds/demo-4/zoonode:0.1"
 CLIENT_IMAGE   = "ds/demo-4/client:0.1"
+ZOONAVIGATOR_IMAGE = "elkozmon/zoonavigator:latest"
 # Subnet to use:
 SUBNET = "10.0.1."
 
@@ -78,11 +79,26 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         d.image = CLIENT[:image]
         d.name = node_name
         d.has_ssh = true
-        d.env = { "ZOO_SERVERS" => "#{SUBNET}100" }
+        d.env = { "ZOO_SERVERS" => "#{SUBNET}101" }
       end
       s.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'}"
     end
   end
+
+  # Definition of Zoonavigator
+  config.vm.define "zoonavigator" do |s|
+    s.vm.network "private_network", ip: "#{SUBNET}101"
+    s.vm.network "forwarded_port", guest: 9000, host: 9000, host_ip: "0.0.0.0"
+    s.vm.hostname = "zoonavigator"
+    s.vm.provider "docker" do |d|
+      d.image = ZOONAVIGATOR_IMAGE
+      d.name = "zoonavigator"
+      d.has_ssh = false
+      d.env = { "HTTP_PORT" => "9000" }
+    end
+    s.vm.post_up_message = "Node 'zoonavigator' up and running. You can access the node with 'vagrant ssh zoonode'}"
+  end
+
 
 end
 
