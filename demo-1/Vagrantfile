@@ -11,6 +11,9 @@ ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
 ENV['VAGRANT_NO_PARALLEL'] = "1"
 ENV['FORWARD_DOCKER_PORTS'] = "1"
 
+ENV['DOCKER_CONTEXT'] = "default"
+#ENV['DOCKER_CONTEXT'] = "desktop-linux"
+
 unless Vagrant.has_plugin?("vagrant-docker-compose")
   system("vagrant plugin install vagrant-docker-compose")
   puts "Dependencies installed, please try the command again."
@@ -19,7 +22,7 @@ end
 
 # Vagrant common configuration
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: ".*/"
+  #config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: ".*/"
   config.ssh.insert_key = false
   
 # Definition of node1
@@ -27,7 +30,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     s.vm.network "private_network", ip: "10.0.1.11"
     s.vm.hostname = "node1"
     s.vm.provider "docker" do |d|
-      d.image = "ghcr.io/maxotta/kiv-ds-docker:latest"
+      d.image = "ghcr.io/maxotta/kiv-dsa-vagrant-base-docker:latest"
       d.name = "node1"
       d.has_ssh = true
     end

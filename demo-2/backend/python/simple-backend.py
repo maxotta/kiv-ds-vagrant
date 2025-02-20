@@ -35,6 +35,9 @@ def find(name):
     response = response + '</body></html>\n'
     return response
 
+@app.route('/ping')
+def ping():
+    return 'pong'
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
