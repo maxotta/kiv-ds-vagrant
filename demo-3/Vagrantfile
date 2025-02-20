@@ -23,7 +23,7 @@ BACKEND_IMAGE  = "ds/demo-3/backend:0.1"
 FRONTEND_IMAGE = "ds/demo-3/frontend:0.1"
 
 # Node definitions
-FRONTEND  = { :name => "frontend",
+FRONTEND  = { :name => "frontend-lb",
               :ipaddr => "10.0.1.10",
               :image => FRONTEND_IMAGE,
               :lb_name => "backend-lb",  # NGINX upstream load-balancing group
@@ -35,7 +35,7 @@ BACKENDS  = { :nameprefix => "backend-",  # backend nodes get names: backend-1, 
               :image => BACKEND_IMAGE,
               :port => 5000 }
 # Number of backends to start:
-BACKENDS_COUNT = 5
+BACKENDS_COUNT = 3
 
 # Common configuration
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -78,11 +78,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       s.vm.network "private_network", ip: node_ip_addr
       s.vm.hostname = node_name
       s.vm.provider "docker" do |d|
-        d.image = BACKENDS[:image]
+        d.build_dir = "backend"
+        d.build_args = ["-t", "#{BACKENDS[:image]}"]
         d.name = node_name
         d.has_ssh = true
       end
-      s.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'}"
+      s.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'"
     end
   end
 
@@ -93,12 +94,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     s.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "0.0.0.0"
     s.vm.hostname = FRONTEND[:name]
     s.vm.provider "docker" do |d|
-      d.image = FRONTEND[:image]
+      d.build_dir = "frontend"
+      d.build_args = ["-t", "#{FRONTEND[:image]}"]
       d.name = FRONTEND[:name]
       d.has_ssh = true
       d.env = { "STARTUP_DELAY": "60" } # minor hack to ensure backend is already running when the frontend wakes up
     end
-    s.vm.post_up_message = "Node #{FRONTEND[:name]} up and running. You can access the node with 'vagrant ssh #{FRONTEND[:name]}'}"
+    s.vm.post_up_message = "Node #{FRONTEND[:name]} up and running. You can access the service at http://localhost:8080/service-api/find/<service>"
   end
 
 end

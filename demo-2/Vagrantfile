@@ -29,15 +29,6 @@ FRONTEND  = { :name => "frontend", :ipaddr => "10.0.1.12", :image => FRONTEND_IM
 # Common configuration
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
-  # Before the 'vagrant up' command is started, build docker images:
-  config.trigger.before :up, type: :command do |trigger|
-    trigger.name = "Build docker images"
-    trigger.ruby do |env, machgine|
-      `docker build backend -t "#{BACKEND_IMAGE}"`
-      `docker build frontend -t "#{FRONTEND_IMAGE}"`
-    end
-  end
-
   config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: ".*/"
   config.ssh.insert_key = false
   
@@ -46,11 +37,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     s.vm.network "private_network", ip: BACKEND[:ipaddr]
     s.vm.hostname = BACKEND[:name]
     s.vm.provider "docker" do |d|
-      d.image = BACKEND[:image]
+      d.build_dir = "backend"
+      d.build_args = ["-t", "#{BACKEND_IMAGE}"]
       d.name = BACKEND[:name]
       d.has_ssh = true
     end
-    s.vm.post_up_message = "Node #{BACKEND[:name]} up and running. You can access the node with 'vagrant ssh #{BACKEND[:name]}'}"
+    s.vm.post_up_message = "Node #{BACKEND[:name]} up and running."
   end
 
   # Definition of FRONTEND
@@ -60,12 +52,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     s.vm.network "forwarded_port", guest: 80, host: 8080, host_ip: "0.0.0.0"
     s.vm.hostname = FRONTEND[:name]
     s.vm.provider "docker" do |d|
-      d.image = FRONTEND[:image]
+      d.build_dir = "frontend"
+      d.build_args = ["-t", "#{FRONTEND_IMAGE}"]
       d.name = FRONTEND[:name]
       d.has_ssh = true
       d.env = { "STARTUP_DELAY": "60" } # minor hack to ensure backend is already running when the frontend wakes up
     end
-    s.vm.post_up_message = "Node #{FRONTEND[:name]} up and running. You can access the node with 'vagrant ssh #{FRONTEND[:name]}'}"
+    s.vm.post_up_message = "Node #{FRONTEND[:name]} up and running. You can access the service at http://localhost:8080/service/api/find/<service>"
   end
 
 end

@@ -2,6 +2,7 @@
 # Simple backend service demo
 #
 
+from time import sleep
 from flask import Flask
 import socket
 
@@ -39,7 +40,6 @@ def find(name):
         response = response + '<b>Service not found.</b>\n'
     response = response + get_backend_signature() + '</body></html>\n'
     return response
-
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
