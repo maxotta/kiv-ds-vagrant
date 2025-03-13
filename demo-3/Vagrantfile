@@ -35,7 +35,7 @@ BACKENDS  = { :nameprefix => "backend-",  # backend nodes get names: backend-1, 
               :image => BACKEND_IMAGE,
               :port => 5000 }
 # Number of backends to start:
-BACKENDS_COUNT = 3
+BACKENDS_COUNT = 5
 
 # Common configuration
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|

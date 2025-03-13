@@ -18,6 +18,8 @@ unless Vagrant.has_plugin?("vagrant-docker-compose")
   exit
 end
 
+ENV['DOCKER_CONTEXT'] = "desktop-linux"
+
 # Names of Docker images built:
 ZOONODE_IMAGE  = "ds/demo-6/zoonode:0.1"
 CLIENT_IMAGE   = "ds/demo-6/client:0.1"
@@ -46,6 +48,7 @@ zoo_servers = ""
 zoo_client_hosts = ""
 # Common configuration
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+  config.vm.synced_folder ".", "/vagrant", disabled: true
 
   # Before the 'vagrant up' command is started, build docker images:
   config.trigger.before :up, type: :command do |trigger|
@@ -53,6 +56,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     trigger.ruby do |env, machine|
         # --- start of Ruby script ---
         # Build Zoonode list:
+        # `docker context desktop-linux`
         puts "Building Zoonode configuration."
         zoo_ensemble = []
         zoo_hosts = []
@@ -87,8 +91,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       s.vm.provider "docker" do |d|
         d.image = ZOONODE[:image]
         d.name = node_name
-        d.has_ssh = true
+        d.has_ssh = false
         d.env = { "ZOO_MY_ID" => i, "ZOO_SERVERS" => "#{zoo_servers}" }
+#        d.create_args = [ "--context #{DOCKER_CONTEXT}",  "--volume=zoonode_data_#{i}:/opt/zk/data" ]
         d.create_args = [ "--volume=zoonode_data_#{i}:/opt/zk/data" ]
       end
       s.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'}"
@@ -106,8 +111,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       s.vm.provider "docker" do |d|
         d.image = CLIENT[:image]
         d.name = node_name
-        d.has_ssh = true
+        d.has_ssh = false
         d.env = { "ZOO_SERVERS" => "#{zoo_client_hosts}" }
+        # d.create_args = [ "--context #{DOCKER_CONTEXT}" ]
       end
       s.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'}"
     end
@@ -123,6 +129,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         d.name = "zoonavigator"
         d.has_ssh = false
         d.env = { "HTTP_PORT" => "9000" }
+        # d.create_args = [ "--context #{DOCKER_CONTEXT}" ]
       end
       s.vm.post_up_message = "Node 'zoonavigator' up and running. You can access the node with 'vagrant ssh zoonode'}"
     end
@@ -130,3 +137,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 end
 
 # EOF
+
+# ["docker", "run", "--name", "zoonode-1", "-d", "-e", "ZOO_MY_ID=1", "-e", "ZOO_SERVERS=server.1=10.0.1.11:2888:3888;2181 server.2=10.0.1.12:2888:3888;2181 server.3=10.0.1.13:2888:3888;2181 server.4=10.0.1.14:2888:3888;2181 server.5=10.0.1.15:2888:3888;2181", "-p", "127.0.0.1:2206:22", "-v", "/home/max/src/github/kiv-ds-vagrant/demo-6:/vagrant", "-h", "zoonode-1", "--context desktop-linux", "--volume=zoonode_data_1:/opt/zk/data", "ds/demo-6/zoonode:0.1"
+# docker --context desktop-linux run --name zoonode-1 -d -e ZOO_MY_ID=1 -e ZOO_SERVERS=server.1=10.0.1.11:2888:3888;2181 server.2=10.0.1.12:2888:3888;2181 server.3=10.0.1.13:2888:3888;2181 server.4=10.0.1.14:2888:3888;2181 server.5=10.0.1.15:2888:3888;2181 -p 127.0.0.1:2222:22 -v /home/max/src/github/kiv-ds-vagrant/demo-6:/vagrant -h zoonode-1 --volume=zoonode_data_1:/opt/zk/data ds/demo-6/zoonode:0.1
