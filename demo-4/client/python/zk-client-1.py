@@ -16,7 +16,7 @@ def main():
   zk.start()
 
   # List node children
-  children = zk.get_children("/ds")
+  children = zk.get_children("/dsa")
   pp.pprint(children)
 
   # Close the session

@@ -34,7 +34,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       d.name = "node1"
       d.has_ssh = true
     end
-    s.vm.post_up_message = "The node up and running. You can access the node with 'vagrant ssh node1'}"
+    s.vm.post_up_message = "The node up and running. You can access the node with 'vagrant ssh node1'"
   end
 
 end

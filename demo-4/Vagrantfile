@@ -24,6 +24,7 @@ CLIENT_IMAGE   = "ds/demo-4/client:0.1"
 ZOONAVIGATOR_IMAGE = "elkozmon/zoonavigator:latest"
 # Subnet to use:
 SUBNET = "10.0.1."
+SRC = Dir.getwd
 
 # Node definitions
 CLIENT  = { :nameprefix => "client-",
@@ -80,7 +81,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         d.image = CLIENT[:image]
         d.name = node_name
         d.has_ssh = true
-        d.env = { "ZOO_SERVERS" => "#{SUBNET}100" }
+        d.env = {
+          "ZOO_SERVERS" => "#{SUBNET}100"
+        }
+        #d.create_args = [ "--volume=#{SRC}:/src" ]
       end
       s.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'}"
     end
@@ -96,6 +100,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       d.name = "zoonavigator"
       d.has_ssh = false
       d.env = { "HTTP_PORT" => "9000" }
+#      d.context = "desktop-linux"
     end
     s.vm.post_up_message = "Node 'zoonavigator' up and running. You can access the node with 'vagrant ssh zoonode'}"
   end

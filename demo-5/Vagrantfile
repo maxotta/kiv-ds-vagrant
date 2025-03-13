@@ -45,6 +45,8 @@ CLIENTS_COUNT = 2
 
 zoo_servers = ""
 zoo_client_hosts = ""
+project_dir = Dir.pwd
+
 # Common configuration
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
@@ -88,6 +90,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         d.name = node_name
         d.has_ssh = true
         d.env = { "ZOO_MY_ID" => i, "ZOO_SERVERS" => "#{zoo_servers}" }
+        d.create_args = [ "--mount", "src=#{project_dir}/client/python,target=/opt/zk/client,type=bind" ]
       end
       s.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'}"
     end
