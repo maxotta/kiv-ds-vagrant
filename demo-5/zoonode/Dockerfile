@@ -26,6 +26,6 @@ EXPOSE 2181 2888 3888 8080
 
 ENV ZOOCFGDIR=/opt/zk/conf ZOO_CONF_DIR=/opt/zk/conf ZOO_DATA_DIR=/opt/zk/data ZOO_LOG_DIR=/opt/zk/logs ZOO_TICK_TIME=2000 ZOO_INIT_LIMIT=5 ZOO_SYNC_LIMIT=2 ZOO_AUTOPURGE_PURGEINTERVAL=0 ZOO_AUTOPURGE_SNAPRETAINCOUNT=3 ZOO_MAX_CLIENT_CNXNS=60 ZOO_STANDALONE_ENABLED=false ZOO_ADMINSERVER_ENABLED=true
 
-CMD /opt/zk/bin/zkServer.sh start-foreground
+CMD /opt/zk/bin/docker-entrypoint.sh /opt/zk/bin/zkServer.sh start-foreground
 
 # EOF
