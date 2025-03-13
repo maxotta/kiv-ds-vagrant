@@ -39,7 +39,7 @@ CLIENT  = { :nameprefix => "client-",
             :config => "client/client.cfg"
           }
 # Number of Zoonodes to start:
-ZOONODES_COUNT = 5 # this should be an odd number
+ZOONODES_COUNT = 3 # this should be an odd number
 # Number of clients to start:
 CLIENTS_COUNT = 2
 
