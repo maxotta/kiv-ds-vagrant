@@ -1,0 +1,77 @@
+#
+# *** Funny RAFT
+# Create N follower nodes and 1 leader node.
+#
+
+VAGRANTFILE_API_VERSION = "2"
+# set docker as the default provider
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
+# disable parallellism so that the containers come up in order
+ENV['VAGRANT_NO_PARALLEL'] = "1"
+ENV['FORWARD_DOCKER_PORTS'] = "1"
+# minor hack enabling to run the image and configuration trigger just once
+ENV['VAGRANT_EXPERIMENTAL']="typed_triggers"
+
+unless Vagrant.has_plugin?("vagrant-docker-compose")
+  system("vagrant plugin install vagrant-docker-compose")
+  puts "Dependencies installed, please try the command again."
+  exit
+end
+
+# Names of Docker images built:
+LEADER_IMAGE  = "ds/funny-raft/leader:0.1"
+FOLLOWER_IMAGE = "ds/funny-raft/follower:0.1"
+
+# Node definitions
+LEADER    = { :name => "leader",
+              :ipaddr => "10.0.1.10",
+              :image => LEADER_IMAGE,
+              :port => 5000 }
+FOLLOWERS = { :nameprefix => "follower-",
+              :subnet => "10.0.1.",
+              :ip_offset => 100, 
+              :image => FOLLOWER_IMAGE,
+              :port => 5000 }
+# Number of follower to start:
+FOLLOWER_COUNT = 3
+
+# Common configuration
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  config.vm.synced_folder ".", "/vagrant", type: "rsync", rsync__exclude: ".*/"
+  config.ssh.insert_key = false
+
+  # Definition of N followers
+  (1..FOLLOWER_COUNT).each do |i|
+    node_ip_addr = "#{FOLLOWERS[:subnet]}#{FOLLOWERS[:ip_offset] + i}"
+    node_name = "#{FOLLOWERS[:nameprefix]}#{i}"
+    # Definition of a follower node
+    config.vm.define node_name do |s|
+      s.vm.network "private_network", ip: node_ip_addr
+      s.vm.hostname = node_name
+      s.vm.provider "docker" do |d|
+        d.build_dir = "follower"
+        d.build_args = ["-t", "#{FOLLOWERS[:image]}"]
+        d.name = node_name
+        d.has_ssh = true
+      end
+      s.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'"
+    end
+  end
+
+  # Definition of the leader node
+  config.vm.define LEADER[:name] do |s|
+    s.vm.network "private_network", ip: LEADER[:ipaddr]
+    s.vm.hostname = LEADER[:name]
+    s.vm.provider "docker" do |d|
+      d.build_dir = "leader"
+      d.build_args = ["-t", "#{LEADER[:image]}"]
+      d.name = LEADER[:name]
+      d.has_ssh = true
+    end
+    s.vm.post_up_message = "Node #{LEADER[:name]} up and running. You can access the node with 'vagrant ssh #{LEADER[:name]}'"
+  end
+
+end
+
+# EOF
