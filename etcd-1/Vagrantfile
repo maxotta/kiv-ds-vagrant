@@ -18,32 +18,24 @@ unless Vagrant.has_plugin?("vagrant-docker-compose")
   exit
 end
 
-# Names of Docker images built:
-ETCD_IMAGE  = "etcd-1/etcdnode:0.1"
-CLIENT_IMAGE   = "etcd-1/client:0.1"
-
 # Subnet to use:
 SUBNET = "10.0.1."
 
 # Node definitions
 ETCDNODE = { :nameprefix => "etcd-",
              :subnet => SUBNET,
-             :ip_offset => 10, 
-             :image => ETCD_IMAGE
+             :ip_offset => 10
           }
 CLIENT  = { :nameprefix => "client-",
             :subnet => SUBNET,
-            :ip_offset => 100,
-            :image => CLIENT_IMAGE,
-            :config => "client/client.cfg"
+            :ip_offset => 100
           }
 # Number of etcd nodes to start:
 ETCD_COUNT = 3 # this should be an odd number
 # Number of clients to start:
-CLIENTS_COUNT = 1
+CLIENTS_COUNT = 2
 
 etcd_cluster = ""
-zoo_client_hosts = ""
 project_dir = Dir.pwd
 
 # Common configuration
@@ -60,18 +52,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         zoo_hosts = []
         (1..ETCD_COUNT).each do |i|
             etcd_nodes << "#{ETCDNODE[:nameprefix]}#{i}=http://#{ETCDNODE[:subnet]}#{ETCDNODE[:ip_offset] + i}:2380"
-#            zoo_ensemble << "server.#{i}=#{ZOONODE[:subnet]}#{ZOONODE[:ip_offset] + i}:2888:3888;2181"
-#            zoo_hosts << "#{ZOONODE[:subnet]}#{ZOONODE[:ip_offset] + i}:2181"
         end
         etcd_cluster = etcd_nodes.join(",")
         puts "etcd_cluster: #{etcd_cluster}"
-        # # Build etcd image:
-        # puts "Building etcd image:"
-        # `docker build etcd -t "#{ETCD_IMAGE}"`
-        # # Build client node image:
-        # puts "Building client node image:"
-        # `docker build client -t "#{CLIENT_IMAGE}"`
-        # --- end of Ruby script ---
     end
   end
 
@@ -86,34 +69,39 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       s.vm.network "private_network", ip: node_ip_addr
       s.vm.hostname = node_name 
       s.vm.provider "docker" do |d|
-        #d.image = ETCDNODE[:image]
         d.build_dir = "etcd"
         d.name = node_name
         d.has_ssh = false
         d.env = { "NODE_NAME" => node_name, "NODE_IP" => node_ip_addr, "CLUSTER" => etcd_cluster }
-        #d.create_args = [ "--mount", "src=#{project_dir}/client/python,target=/opt/client,type=bind" ]
       end
       s.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'}"
     end
   end
 
-  # # Definition of N client nodes
-  # (1..CLIENTS_COUNT).each do |i|
-  #   node_ip_addr = "#{CLIENT[:subnet]}#{CLIENT[:ip_offset] + i}"
-  #   node_name = "#{CLIENT[:nameprefix]}#{i}"
-  #   # Definition of client node
-  #   config.vm.define node_name do |s|
-  #     s.vm.network "private_network", ip: node_ip_addr
-  #     s.vm.hostname = node_name
-  #     s.vm.provider "docker" do |d|
-  #       d.image = CLIENT[:image]
-  #       d.name = node_name
-  #       d.has_ssh = true
-  #       d.env = { "ZOO_SERVERS" => "#{zoo_client_hosts}" }
-  #     end
-  #     s.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'}"
-  #   end
-  # end
+  # Definition of N client nodes
+  (1..CLIENTS_COUNT).each do |i|
+    node_ip_addr = "#{CLIENT[:subnet]}#{CLIENT[:ip_offset] + i}"
+    node_name = "#{CLIENT[:nameprefix]}#{i}"
+    # Definition of client node
+    config.vm.define node_name do |c|
+      c.vm.network "private_network", ip: node_ip_addr
+      c.vm.hostname = node_name
+      c.vm.provider "docker" do |d|
+        d.build_dir = "client"
+        d.name = node_name
+        d.has_ssh = true
+        d.env = { "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION" => "python" }
+      end
+      c.vm.provision "shell", privileged: false, run: "once" do |s|
+        s.inline = <<-SHELL
+          echo "export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python" >> /home/vagrant/.bashrc
+          echo "export ETCDCTL_API=3" >> /home/vagrant/.bashrc
+          echo "export ETCDCTL_ENDPOINTS=http://#{etcd_cluster}" >> /home/vagrant/.bashrc
+        SHELL
+      end
+      c.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'}"
+    end
+  end
 
 end
 
