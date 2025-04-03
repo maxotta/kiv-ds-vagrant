@@ -1,0 +1,108 @@
+#
+# *** etcd
+# Create etcd nodes and M clients.
+#
+
+VAGRANTFILE_API_VERSION = "2"
+# set docker as the default provider
+ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
+# disable parallellism so that the containers come up in order
+ENV['VAGRANT_NO_PARALLEL'] = "1"
+ENV['FORWARD_DOCKER_PORTS'] = "1"
+# minor hack enabling to run the image and configuration trigger just once
+ENV['VAGRANT_EXPERIMENTAL']="typed_triggers"
+
+unless Vagrant.has_plugin?("vagrant-docker-compose")
+  system("vagrant plugin install vagrant-docker-compose")
+  puts "Dependencies installed, please try the command again."
+  exit
+end
+
+# Subnet to use:
+SUBNET = "10.0.1."
+
+# Node definitions
+ETCDNODE = { :nameprefix => "etcd-",
+             :subnet => SUBNET,
+             :ip_offset => 10
+          }
+CLIENT  = { :nameprefix => "client-",
+            :subnet => SUBNET,
+            :ip_offset => 100
+          }
+# Number of etcd nodes to start:
+ETCD_COUNT = 3 # this should be an odd number
+# Number of clients to start:
+CLIENTS_COUNT = 2
+
+etcd_cluster = ""
+project_dir = Dir.pwd
+
+# Common configuration
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  # Before the 'vagrant up' command is started, build docker images:
+  config.trigger.before :up, type: :command do |trigger|
+    trigger.name = "Build docker images and configuration files"
+    trigger.ruby do |env, machine|
+        # --- start of Ruby script ---
+        # Build etcd node list:
+        puts "Building etcd configuration."
+        etcd_nodes = []
+        zoo_hosts = []
+        (1..ETCD_COUNT).each do |i|
+            etcd_nodes << "#{ETCDNODE[:nameprefix]}#{i}=http://#{ETCDNODE[:subnet]}#{ETCDNODE[:ip_offset] + i}:2380"
+        end
+        etcd_cluster = etcd_nodes.join(",")
+        puts "etcd_cluster: #{etcd_cluster}"
+    end
+  end
+
+  config.ssh.insert_key = false
+
+  # Definition of N etcd nodes
+  (1..ETCD_COUNT).each do |i|
+    node_ip_addr = "#{ETCDNODE[:subnet]}#{ETCDNODE[:ip_offset] + i}"
+    node_name = "#{ETCDNODE[:nameprefix]}#{i}"
+    # Definition of etcd node
+    config.vm.define node_name do |s|
+      s.vm.network "private_network", ip: node_ip_addr
+      s.vm.hostname = node_name 
+      s.vm.provider "docker" do |d|
+        d.build_dir = "etcd"
+        d.name = node_name
+        d.has_ssh = false
+        d.env = { "NODE_NAME" => node_name, "NODE_IP" => node_ip_addr, "CLUSTER" => etcd_cluster }
+      end
+      s.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'}"
+    end
+  end
+
+  # Definition of N client nodes
+  (1..CLIENTS_COUNT).each do |i|
+    node_ip_addr = "#{CLIENT[:subnet]}#{CLIENT[:ip_offset] + i}"
+    node_name = "#{CLIENT[:nameprefix]}#{i}"
+    # Definition of client node
+    config.vm.define node_name do |c|
+      c.vm.network "private_network", ip: node_ip_addr
+      c.vm.hostname = node_name
+      c.vm.provider "docker" do |d|
+        d.build_dir = "client"
+        d.name = node_name
+        d.has_ssh = true
+        d.env = { "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION" => "python" }
+      end
+      c.vm.provision "shell", privileged: false, run: "once" do |s|
+        s.inline = <<-SHELL
+          echo "export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=python" >> /home/vagrant/.bashrc
+          echo "export ETCDCTL_API=3" >> /home/vagrant/.bashrc
+          echo "export ETCDCTL_ENDPOINTS=http://#{etcd_cluster}" >> /home/vagrant/.bashrc
+        SHELL
+      end
+      c.vm.post_up_message = "Node #{node_name} up and running. You can access the node with 'vagrant ssh #{node_name}'}"
+    end
+  end
+
+end
+
+# EOF
