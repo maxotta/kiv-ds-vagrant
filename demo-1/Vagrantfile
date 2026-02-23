@@ -5,6 +5,9 @@
 
 # vagrant centos config.vm.provider "docker" sshd
 VAGRANTFILE_API_VERSION = "2"
+
+ENV['VAGRANT_WSL_ENABLE_WINDOWS_ACCESS'] = "1"
+
 # set docker as the default provider
 ENV['VAGRANT_DEFAULT_PROVIDER'] = 'docker'
 # disable parallellism so that the containers come up in order

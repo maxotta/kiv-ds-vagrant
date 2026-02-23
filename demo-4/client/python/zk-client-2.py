@@ -18,7 +18,8 @@ def main():
 
   # Create an ephemeral node with the same name as the hostname.
   # If the '/ds/clients' context doesn't exist yet, it will be also created
-  zk.create(f"/ds/clients/{ socket.gethostname() }", ephemeral=True, makepath=True)
+  #zk.create(f"/ds/clients/{ socket.gethostname() }", ephemeral=True, makepath=True)
+  zk.create(f"/dsa/clients/client-", ephemeral=True, sequence=True, makepath=True)
   sleep(15)
 
   # Close the session

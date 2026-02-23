@@ -36,6 +36,8 @@ def main():
   zk = KazooClient(hosts=ensemble)
   # Start a Zookeeper session
   zk.start()
+  # Get the current zookeeper node information
+
   cluster_info = zk.get("/ds/cluster-1")
   pp.pprint(cluster_info)
   my_node = zk.create("/ds/cluster-1/node-", ephemeral=True, sequence=True)
@@ -47,8 +49,8 @@ def main():
   my_data = zk.get(my_node, watch=my_handler)
   print(f"My data is: { my_data }.")
 
-  # Sleep for 5 min
-  sleep(300)
+  # Sleep for 10 min
+  sleep(600)
   # Close the session
   zk.stop()
 

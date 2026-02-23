@@ -6,3 +6,7 @@
 build/
 bin/
 
+
+demo-3/frontend/config/backend-upstream.conf
+
+demo-3/health

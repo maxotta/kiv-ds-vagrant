@@ -88,6 +88,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       c.vm.hostname = node_name
       c.vm.provider "docker" do |d|
         d.build_dir = "client"
+        d.dockerfile = "Dockerfile.base"
         d.name = node_name
         d.has_ssh = true
         d.env = { "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION" => "python" }

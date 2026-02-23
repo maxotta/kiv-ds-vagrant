@@ -1,13 +1,14 @@
 #
-# Zookeeper client node demo container image
-#
+# etcd golang client node demo container image
+# go install go.etcd.io/etcd/client/v3@latest
+#FROM golang:1.24 AS go
 
 FROM ghcr.io/maxotta/kiv-dsa-vagrant-base-docker:latest
 
-RUN yum -q -y install python3
-RUN yum -q -y install python3-pip
-RUN pip3 install etcd3
+RUN dnf update -y
+RUN dnf install golang -y
 
-COPY python /opt/client
+RUN go get go.etcd.io/etcd/client/v3
+# go mod download go.etcd.io/etcd/client/v3
 
 # EOF

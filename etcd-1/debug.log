@@ -1,0 +1,1097 @@
+ INFO global: Vagrant version: 2.4.3
+ INFO global: Ruby version: 3.3.6
+ INFO global: RubyGems version: 3.5.22
+ INFO global: VAGRANT_INSTALLER_ENV="1"
+ INFO global: VAGRANT_INSTALLER_VERSION="2"
+ INFO global: VAGRANT_INSTALLER_EMBEDDED_DIR="/opt/vagrant/embedded"
+ INFO global: VAGRANT_EXECUTABLE="/opt/vagrant/embedded/gems/gems/vagrant-2.4.3/bin/vagrant"
+ INFO global: VAGRANT_LOG="debug"
+DEBUG global: vagrant ssl helper found for loading ssl providers
+DEBUG global: ssl providers successfully loaded
+ WARN global: resolv replacement has not been enabled!
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/port/plugin.rb
+ INFO manager: Registered plugin: port command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/box/plugin.rb
+ INFO manager: Registered plugin: box command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/winrm_config/plugin.rb
+ INFO manager: Registered plugin: winrm-config command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/rdp/plugin.rb
+ INFO manager: Registered plugin: rdp command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/provision/plugin.rb
+ INFO manager: Registered plugin: provision command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/upload/plugin.rb
+ INFO manager: Registered plugin: upload command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/suspend/plugin.rb
+ INFO manager: Registered plugin: suspend command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/init/plugin.rb
+ INFO manager: Registered plugin: init command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/destroy/plugin.rb
+ INFO manager: Registered plugin: destroy command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/serve/plugin.rb
+ INFO manager: Registered plugin: start Vagrant server
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/ssh/plugin.rb
+ INFO manager: Registered plugin: ssh command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/validate/plugin.rb
+ INFO manager: Registered plugin: validate command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/plugin/plugin.rb
+ INFO manager: Registered plugin: plugin command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/push/plugin.rb
+ INFO manager: Registered plugin: push command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/help/plugin.rb
+ INFO manager: Registered plugin: help command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/winrm/plugin.rb
+ INFO manager: Registered plugin: winrm command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/package/plugin.rb
+ INFO manager: Registered plugin: package command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/global-status/plugin.rb
+ INFO manager: Registered plugin: global-status command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/halt/plugin.rb
+ INFO manager: Registered plugin: halt command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/list-commands/plugin.rb
+ INFO manager: Registered plugin: list-commands command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/snapshot/plugin.rb
+ INFO manager: Registered plugin: snapshot command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/cap/plugin.rb
+ INFO manager: Registered plugin: cap command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/up/plugin.rb
+ INFO manager: Registered plugin: up command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/ssh_config/plugin.rb
+ INFO manager: Registered plugin: ssh-config command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/provider/plugin.rb
+ INFO manager: Registered plugin: provider command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/powershell/plugin.rb
+ INFO manager: Registered plugin: powershell command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/reload/plugin.rb
+ INFO manager: Registered plugin: reload command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/autocomplete/plugin.rb
+ INFO manager: Registered plugin: autocomplete command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/cloud/plugin.rb
+ INFO manager: Registered plugin: vagrant-cloud
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/resume/plugin.rb
+ INFO manager: Registered plugin: resume command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/version/plugin.rb
+ INFO manager: Registered plugin: version command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/status/plugin.rb
+ INFO manager: Registered plugin: status command
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/commands/login/plugin.rb
+ INFO manager: Registered plugin: vagrant-login
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/kernel_v2/plugin.rb
+ INFO manager: Registered plugin: kernel
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/synced_folders/smb/plugin.rb
+ INFO manager: Registered plugin: SMB synced folders
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/synced_folders/nfs/plugin.rb
+ INFO manager: Registered plugin: NFS synced folders
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/synced_folders/rsync/plugin.rb
+ INFO manager: Registered plugin: RSync synced folders
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/pushes/atlas/plugin.rb
+ INFO manager: Registered plugin: atlas
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/pushes/heroku/plugin.rb
+ INFO manager: Registered plugin: heroku
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/pushes/ftp/plugin.rb
+ INFO manager: Registered plugin: ftp
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/pushes/local-exec/plugin.rb
+ INFO manager: Registered plugin: local-exec
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/pushes/noop/plugin.rb
+ INFO manager: Registered plugin: noop
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/hosts/slackware/plugin.rb
+ INFO manager: Registered plugin: Slackware host
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/hosts/darwin/plugin.rb
+ INFO manager: Registered plugin: Mac OS X host
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/hosts/freebsd/plugin.rb
+ INFO manager: Registered plugin: FreeBSD host
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/hosts/null/plugin.rb
+ INFO manager: Registered plugin: null host
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/hosts/gentoo/plugin.rb
+ INFO manager: Registered plugin: Gentoo host
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/hosts/arch/plugin.rb
+ INFO manager: Registered plugin: Arch host
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/hosts/alt/plugin.rb
+ INFO manager: Registered plugin: ALT Platform host
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/hosts/windows/plugin.rb
+ INFO manager: Registered plugin: Windows host
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/hosts/linux/plugin.rb
+ INFO manager: Registered plugin: Linux host
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/hosts/redhat/plugin.rb
+ INFO manager: Registered plugin: Red Hat Enterprise Linux host
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/hosts/suse/plugin.rb
+ INFO manager: Registered plugin: SUSE host
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/hosts/bsd/plugin.rb
+ INFO manager: Registered plugin: BSD host
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/hosts/void/plugin.rb
+ INFO manager: Registered plugin: Void host
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/communicators/winssh/plugin.rb
+ INFO manager: Registered plugin: windows ssh communicator
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/communicators/ssh/plugin.rb
+ INFO manager: Registered plugin: ssh communicator
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/communicators/winrm/plugin.rb
+ INFO manager: Registered plugin: winrm communicator
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/kernel_v1/plugin.rb
+ INFO manager: Registered plugin: kernel
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/provisioners/chef/plugin.rb
+ INFO manager: Registered plugin: chef
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/provisioners/ansible/plugin.rb
+ INFO manager: Registered plugin: ansible
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/provisioners/docker/plugin.rb
+ INFO manager: Registered plugin: docker
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/provisioners/cfengine/plugin.rb
+ INFO manager: Registered plugin: CFEngine Provisioner
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/provisioners/puppet/plugin.rb
+ INFO manager: Registered plugin: puppet
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/provisioners/shell/plugin.rb
+ INFO manager: Registered plugin: shell
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/provisioners/file/plugin.rb
+ INFO manager: Registered plugin: file
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/provisioners/podman/plugin.rb
+ INFO manager: Registered plugin: podman
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/provisioners/container/plugin.rb
+ INFO manager: Registered plugin: container
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/provisioners/salt/plugin.rb
+ INFO manager: Registered plugin: salt
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/ubuntu/plugin.rb
+ INFO manager: Registered plugin: Ubuntu guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/openbsd/plugin.rb
+ INFO manager: Registered plugin: OpenBSD guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/rocky/plugin.rb
+ INFO manager: Registered plugin: Rocky guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/alpine/plugin.rb
+ INFO manager: Registered plugin: Alpine guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/photon/plugin.rb
+ INFO manager: Registered plugin: VMware Photon guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/tinycore/plugin.rb
+ INFO manager: Registered plugin: TinyCore Linux guest.
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/esxi/plugin.rb
+ INFO manager: Registered plugin: ESXi guest.
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/slackware/plugin.rb
+ INFO manager: Registered plugin: Slackware guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/openwrt/plugin.rb
+ INFO manager: Registered plugin: OpenWrt guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/darwin/plugin.rb
+ INFO manager: Registered plugin: Darwin guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/coreos/plugin.rb
+ INFO manager: Registered plugin: CoreOS guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/nixos/plugin.rb
+ INFO manager: Registered plugin: NixOS guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/freebsd/plugin.rb
+ INFO manager: Registered plugin: FreeBSD guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/funtoo/plugin.rb
+ INFO manager: Registered plugin: Funtoo guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/haiku/plugin.rb
+ INFO manager: Registered plugin: Haiku guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/centos/plugin.rb
+ INFO manager: Registered plugin: CentOS guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/debian/plugin.rb
+ INFO manager: Registered plugin: Debian guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/gentoo/plugin.rb
+ INFO manager: Registered plugin: Gentoo guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/trisquel/plugin.rb
+ INFO manager: Registered plugin: Trisquel guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/arch/plugin.rb
+ INFO manager: Registered plugin: Arch guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/solaris/plugin.rb
+ INFO manager: Registered plugin: Solaris guest.
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/kali/plugin.rb
+ INFO manager: Registered plugin: Kali guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/netbsd/plugin.rb
+ INFO manager: Registered plugin: NetBSD guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/alt/plugin.rb
+ INFO manager: Registered plugin: ALT Platform guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/mint/plugin.rb
+ INFO manager: Registered plugin: Mint guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/fedora/plugin.rb
+ INFO manager: Registered plugin: Fedora guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/amazon/plugin.rb
+ INFO manager: Registered plugin: Amazon Linux guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/solaris11/plugin.rb
+ INFO manager: Registered plugin: Solaris 11 guest.
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/windows/plugin.rb
+ INFO manager: Registered plugin: Windows guest.
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/dragonflybsd/plugin.rb
+ INFO manager: Registered plugin: DragonFly BSD guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/linux/plugin.rb
+ INFO manager: Registered plugin: Linux guest.
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/redhat/plugin.rb
+ INFO manager: Registered plugin: Red Hat Enterprise Linux guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/suse/plugin.rb
+ INFO manager: Registered plugin: SUSE guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/atomic/plugin.rb
+ INFO manager: Registered plugin: Atomic Host guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/smartos/plugin.rb
+ INFO manager: Registered plugin: SmartOS guest.
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/bsd/plugin.rb
+ INFO manager: Registered plugin: BSD-based guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/pld/plugin.rb
+ INFO manager: Registered plugin: PLD Linux guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/alma/plugin.rb
+ INFO manager: Registered plugin: Alma guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/omnios/plugin.rb
+ INFO manager: Registered plugin: OmniOS guest.
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/guests/elementary/plugin.rb
+ INFO manager: Registered plugin: Elementary guest
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb
+ INFO manager: Registered plugin: docker-provider
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb
+ INFO manager: Registered plugin: Hyper-V provider
+DEBUG global: Loading core plugin: /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb
+ INFO manager: Registered plugin: VirtualBox provider
+ INFO vagrant: `vagrant` invoked: ["up", "--debug"]
+DEBUG vagrant: Creating Vagrant environment
+ INFO environment: Environment initialized (#<Vagrant::Environment:0x000073016f78bd68>)
+ INFO environment:   - cwd: /home/max/src/github/kiv-ds-vagrant/etcd-1
+ INFO environment: Home path: /home/max/.vagrant.d
+DEBUG environment: Effective local data path: /home/max/src/github/kiv-ds-vagrant/etcd-1/.vagrant
+ INFO environment: Local data path: /home/max/src/github/kiv-ds-vagrant/etcd-1/.vagrant
+DEBUG environment: Creating: /home/max/src/github/kiv-ds-vagrant/etcd-1/.vagrant
+DEBUG manager: Enabling localized plugins
+ INFO manager: Plugins:
+DEBUG solution_file: new solution file instance plugin_file=/home/max/src/github/kiv-ds-vagrant/etcd-1/.vagrant/plugins.json solution_file=/home/max/src/github/kiv-ds-vagrant/etcd-1/.vagrant/bundler/local.sol
+DEBUG solution_file: missing file so skipping loading
+DEBUG bundler: solution file in use for init: <Vagrant::Bundler::SolutionFile:/home/max/src/github/kiv-ds-vagrant/etcd-1/.vagrant/plugins.json:/home/max/src/github/kiv-ds-vagrant/etcd-1/.vagrant/bundler/local.sol:invalid>
+DEBUG bundler: Generating new builtin set instance.
+DEBUG bundler: Generating new plugin set instance. Skip gems - []
+DEBUG bundler: generating solution set for configured plugins
+DEBUG bundler: Current generated plugin dependency list: []
+DEBUG bundler: resolving solution from available specification set
+DEBUG bundler: solution set for configured plugins has been resolved
+DEBUG bundler: activating solution set
+DEBUG bundler: Activating solution set: []
+DEBUG solution_file: plugin file does not exist, not storing solution
+DEBUG bundler: solution set stored to - <Vagrant::Bundler::SolutionFile:/home/max/src/github/kiv-ds-vagrant/etcd-1/.vagrant/plugins.json:/home/max/src/github/kiv-ds-vagrant/etcd-1/.vagrant/bundler/local.sol:invalid>
+ INFO manager: Loading plugins...
+DEBUG manager: Enabling globalized plugins
+ INFO manager: Plugins:
+ INFO manager:   - vagrant-docker-compose = [installed: 1.5.1 constraint: > 0]
+DEBUG solution_file: new solution file instance plugin_file=/home/max/.vagrant.d/plugins.json solution_file=/home/max/src/github/kiv-ds-vagrant/etcd-1/.vagrant/bundler/global.sol
+DEBUG solution_file: reading solution file - /home/max/src/github/kiv-ds-vagrant/etcd-1/.vagrant/bundler/global.sol
+DEBUG solution_file: solution validation check CHECKSUM b420b3237173e6d815163afabe8bfa3b73ba141d1b40209e5f15c1a0b9639449 <-> b420b3237173e6d815163afabe8bfa3b73ba141d1b40209e5f15c1a0b9639449 VERSION 2.4.3 <-> 2.4.3
+DEBUG solution_file: loading solution dependency list
+DEBUG solution_file: solution dependency list: [#<Gem::Resolver::DependencyRequest:0x000073016f39aab0 @dependency=<Gem::Dependency type=:runtime name="vagrant-docker-compose" requirements="= 1.5.1">, @requester=nil>]
+DEBUG bundler: solution file in use for init: <Vagrant::Bundler::SolutionFile:/home/max/.vagrant.d/plugins.json:/home/max/src/github/kiv-ds-vagrant/etcd-1/.vagrant/bundler/global.sol:valid>
+DEBUG bundler: Generating new builtin set instance.
+DEBUG bundler: Generating new plugin set instance. Skip gems - []
+DEBUG bundler: loading cached solution set
+DEBUG bundler: activating solution set
+DEBUG bundler: Activating solution set: ["vagrant-docker-compose-1.5.1"]
+DEBUG bundler: Activating gem vagrant-docker-compose-1.5.1
+ INFO manager: Loading plugins...
+ INFO manager: Loading plugin `vagrant-docker-compose` with default require: `vagrant-docker-compose`
+ INFO manager: Registered plugin: docker-compose-provisioner
+DEBUG manager: Successfully loaded plugin `vagrant-docker-compose`.
+ INFO loader: Set :root = ["#<Pathname:/home/max/src/github/kiv-ds-vagrant/etcd-1/Vagrantfile>"]
+DEBUG loader: Populating proc cache for #<Pathname:/home/max/src/github/kiv-ds-vagrant/etcd-1/Vagrantfile>
+DEBUG loader: Load procs for pathname: /home/max/src/github/kiv-ds-vagrant/etcd-1/Vagrantfile
+ INFO loader: Loading configuration in order: [:home, :root]
+DEBUG loader: Loading from: root (evaluating)
+DEBUG config: Trigger defined for: up
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+DEBUG environment: Default provider: `docker`
+DEBUG environment: Using forced default provider: `docker`
+ INFO loader: Set "860_machine_etcd-1" = ["[\"2\", #<Proc:0x000073016f2ee648 /home/max/src/github/kiv-ds-vagrant/etcd-1/Vagrantfile:85>]"]
+DEBUG loader: Populating proc cache for ["2", #<Proc:0x000073016f2ee648 /home/max/src/github/kiv-ds-vagrant/etcd-1/Vagrantfile:85>]
+ INFO loader: Loading configuration in order: [:home, :root, "860_machine_etcd-1"]
+DEBUG loader: Loading from: root (cache)
+DEBUG loader: Loading from: 860_machine_etcd-1 (evaluating)
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+ INFO vmconfig: config class lookup for provider :docker gave us base class: VagrantPlugins::DockerProvider::Config
+ WARN vagrantfile: Failed to locate  with version 
+ WARN vagrantfile: Performing lookup with initial values  with version 
+ INFO loader: Set "860_machine_etcd-2" = ["[\"2\", #<Proc:0x000073016f2ee468 /home/max/src/github/kiv-ds-vagrant/etcd-1/Vagrantfile:85>]"]
+DEBUG loader: Populating proc cache for ["2", #<Proc:0x000073016f2ee468 /home/max/src/github/kiv-ds-vagrant/etcd-1/Vagrantfile:85>]
+ INFO loader: Loading configuration in order: [:home, :root, "860_machine_etcd-2"]
+ WARN loader: Unknown config sources: ["860_machine_etcd-1"]
+DEBUG loader: Loading from: root (cache)
+DEBUG loader: Loading from: 860_machine_etcd-2 (evaluating)
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+ INFO vmconfig: config class lookup for provider :docker gave us base class: VagrantPlugins::DockerProvider::Config
+ WARN vagrantfile: Failed to locate  with version 
+ WARN vagrantfile: Performing lookup with initial values  with version 
+ INFO loader: Set "860_machine_etcd-3" = ["[\"2\", #<Proc:0x000073016f2ee288 /home/max/src/github/kiv-ds-vagrant/etcd-1/Vagrantfile:85>]"]
+DEBUG loader: Populating proc cache for ["2", #<Proc:0x000073016f2ee288 /home/max/src/github/kiv-ds-vagrant/etcd-1/Vagrantfile:85>]
+ INFO loader: Loading configuration in order: [:home, :root, "860_machine_etcd-3"]
+ WARN loader: Unknown config sources: ["860_machine_etcd-1", "860_machine_etcd-2"]
+DEBUG loader: Loading from: root (cache)
+DEBUG loader: Loading from: 860_machine_etcd-3 (evaluating)
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+ INFO vmconfig: config class lookup for provider :docker gave us base class: VagrantPlugins::DockerProvider::Config
+ WARN vagrantfile: Failed to locate  with version 
+ WARN vagrantfile: Performing lookup with initial values  with version 
+ INFO environment: Running hook: environment_plugins_loaded
+ INFO runner: Running action: environment_plugins_loaded #<Vagrant::Action::Builder:0x000073016f26d818>
+ INFO environment: Running hook: environment_load
+ INFO runner: Running action: environment_load #<Vagrant::Action::Builder:0x000073016f311b98>
+DEBUG vagrant: Experimental flag is enabled
+ INFO interface: warn: You have requested to enable the experimental flag with the following features:
+
+Features:  typed_triggers
+
+Please use with caution, as some of the features may not be fully
+functional yet.
+ INFO interface: warn: ==> vagrant: You have requested to enable the experimental flag with the following features:
+==> vagrant: 
+==> vagrant: Features:  typed_triggers
+==> vagrant: 
+==> vagrant: Please use with caution, as some of the features may not be fully
+==> vagrant: functional yet.
+==> vagrant: You have requested to enable the experimental flag with the following features:
+==> vagrant: 
+==> vagrant: Features:  typed_triggers
+==> vagrant: 
+==> vagrant: Please use with caution, as some of the features may not be fully
+==> vagrant: functional yet.
+DEBUG checkpoint_client: starting plugin check
+ INFO cli: CLI: [] "up" []
+DEBUG checkpoint_client: plugin check complete
+DEBUG cli: Invoking command class: VagrantPlugins::CommandUp::Command []
+DEBUG checkpoint_client: no information received from checkpoint
+ INFO trigger: Firing trigger for command up on guest 
+ INFO interface: info: Running command triggers before up ...
+ INFO interface: info: ==> vagrant: Running command triggers before up ...
+==> vagrant: Running command triggers before up ...
+DEBUG trigger: Running trigger 79e94fc5-3ac1-44f7-8f4d-04d7d581aca5...
+ INFO interface: info: Running trigger: Build docker images and configuration files...
+ INFO interface: info: ==> vagrant: Running trigger: Build docker images and configuration files...
+==> vagrant: Running trigger: Build docker images and configuration files...
+Building etcd configuration.
+etcd_cluster: etcd-1=http://10.0.1.11:2380,etcd-2=http://10.0.1.12:2380,etcd-3=http://10.0.1.13:2380
+Building etcd image:
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 813B done
+#1 WARN: JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 21)
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/maxotta/kiv-dsa-vagrant-base-docker:latest
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/4] FROM ghcr.io/maxotta/kiv-dsa-vagrant-base-docker:latest
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 42B done
+#5 DONE 0.0s
+
+#6 [2/4] RUN curl -L https://github.com/etcd-io/etcd/releases/download/v3.5.19/etcd-v3.5.19-linux-amd64.tar.gz -o /tmp/etcd-v3.5.19-linux-amd64.tar.gz ;     tar xzvf /tmp/etcd-v3.5.19-linux-amd64.tar.gz -C /opt/etcd --strip-components=1 ;     rm -f /tmp/etcd-v3.5.19-linux-amd64.tar.gz
+#6 CACHED
+
+#7 [3/4] COPY docker-entrypoint.sh /opt/etcd/docker-entrypoint.sh
+#7 CACHED
+
+#8 [4/4] RUN  chmod a+x /opt/etcd/docker-entrypoint.sh
+#8 CACHED
+
+#9 exporting to image
+#9 exporting layers done
+#9 writing image sha256:47129af63bdbee8306b7023d9b4c827c3ff44f7f28bafde553c937bd9bb0506a 0.0s done
+#9 naming to docker.io/etcd-1/etcdnode:0.1 done
+#9 DONE 0.0s
+
+ [33m1 warning found (use docker --debug to expand):
+[0m - JSONArgsRecommended: JSON arguments recommended for CMD to prevent unintended behavior related to OS signals (line 21)
+Building client node image:
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 268B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for ghcr.io/maxotta/kiv-dsa-vagrant-base-docker:latest
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context:
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [1/5] FROM ghcr.io/maxotta/kiv-dsa-vagrant-base-docker:latest
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 220B done
+#5 DONE 0.0s
+
+#6 [2/5] RUN yum -q -y install python3
+#6 CACHED
+
+#7 [3/5] RUN yum -q -y install python3-pip
+#7 CACHED
+
+#8 [4/5] RUN pip3 install kazoo
+#8 CACHED
+
+#9 [5/5] COPY python /opt/zk/client
+#9 CACHED
+
+#10 exporting to image
+#10 exporting layers done
+#10 writing image sha256:8b3a65f5c3b23a1a9cd42046cb5086d8758c21b63cec9e7d340aa06294bad843 0.0s done
+#10 naming to docker.io/etcd-1/client:0.1 0.0s done
+#10 DONE 0.0s
+DEBUG command: 'Up' each target VM...
+DEBUG command: Getting target VMs for command. Arguments:
+DEBUG command:  -- names: ["etcd-1", "etcd-2", "etcd-3"]
+DEBUG command:  -- options: {:provider=>nil}
+ INFO command: getting active machines
+DEBUG command: Finding machine that match name: etcd-1
+ INFO command: Active machine found with name etcd-1. Using provider: docker
+ INFO environment: Getting machine: etcd-1 (docker)
+ INFO environment: Uncached load of machine.
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "version"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO loader: Set "860_machine_etcd-1" = ["[\"2\", #<Proc:0x000073016f2ee648 /home/max/src/github/kiv-ds-vagrant/etcd-1/Vagrantfile:85>]"]
+ INFO loader: Loading configuration in order: [:home, :root, "860_machine_etcd-1"]
+ WARN loader: Unknown config sources: ["860_machine_etcd-2", "860_machine_etcd-3"]
+DEBUG loader: Loading from: root (cache)
+DEBUG loader: Loading from: 860_machine_etcd-1 (cache)
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+ INFO vmconfig: config class lookup for provider :docker gave us base class: VagrantPlugins::DockerProvider::Config
+ WARN vagrantfile: Failed to locate  with version 
+ WARN vagrantfile: Performing lookup with initial values  with version 
+ INFO vmconfig: looking up provider config for: :docker
+ INFO vmconfig: provider config value that was stored: #<VagrantPlugins::DockerProvider::Config:0x00007301553b7a80 @build_args=[], @build_dir=nil, @git_repo=nil, @cmd=[], @compose=false, @compose_configuration={}, @create_args=[], @dockerfile=nil, @env={"NODE_NAME"=>"etcd-1", "NODE_IP"=>"10.0.1.11", "CLUSTER"=>"etcd-1=http://10.0.1.11:2380,etcd-2=http://10.0.1.12:2380,etcd-3=http://10.0.1.13:2380"}, @expose=[], @force_host_vm=false, @has_ssh=true, @host_vm_build_dir_options=nil, @image="etcd-1/etcdnode:0.1", @name="etcd-1", @links=[], @pull=false, @ports=[], @privileged=false, @remains_running=true, @stop_timeout=1, @volumes=[], @vagrant_machine=nil, @vagrant_vagrantfile=nil, @auth_server=nil, @email="", @username="", @password="", @__invalid_methods=#<Set: {}>>
+ INFO machine: Initializing machine: etcd-1
+ INFO machine:   - Provider: VagrantPlugins::DockerProvider::Provider
+ INFO machine:   - Box: 
+ INFO machine:   - Data dir: /home/max/src/github/kiv-ds-vagrant/etcd-1/.vagrant/machines/etcd-1/docker
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO interface: Machine: metadata ["provider", :docker, {:target=>:"etcd-1"}]
+DEBUG command: Finding machine that match name: etcd-2
+DEBUG environment: Default provider: `docker`
+DEBUG environment: Using forced default provider: `docker`
+ INFO environment: Getting machine: etcd-2 (docker)
+ INFO environment: Uncached load of machine.
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "version"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO loader: Set "860_machine_etcd-2" = ["[\"2\", #<Proc:0x000073016f2ee468 /home/max/src/github/kiv-ds-vagrant/etcd-1/Vagrantfile:85>]"]
+ INFO loader: Loading configuration in order: [:home, :root, "860_machine_etcd-2"]
+ WARN loader: Unknown config sources: ["860_machine_etcd-1", "860_machine_etcd-3"]
+DEBUG loader: Loading from: root (cache)
+DEBUG loader: Loading from: 860_machine_etcd-2 (cache)
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+ INFO vmconfig: config class lookup for provider :docker gave us base class: VagrantPlugins::DockerProvider::Config
+ WARN vagrantfile: Failed to locate  with version 
+ WARN vagrantfile: Performing lookup with initial values  with version 
+ INFO vmconfig: looking up provider config for: :docker
+ INFO vmconfig: provider config value that was stored: #<VagrantPlugins::DockerProvider::Config:0x00007301553b7d00 @build_args=[], @build_dir=nil, @git_repo=nil, @cmd=[], @compose=false, @compose_configuration={}, @create_args=[], @dockerfile=nil, @env={"NODE_NAME"=>"etcd-2", "NODE_IP"=>"10.0.1.12", "CLUSTER"=>"etcd-1=http://10.0.1.11:2380,etcd-2=http://10.0.1.12:2380,etcd-3=http://10.0.1.13:2380"}, @expose=[], @force_host_vm=false, @has_ssh=true, @host_vm_build_dir_options=nil, @image="etcd-1/etcdnode:0.1", @name="etcd-2", @links=[], @pull=false, @ports=[], @privileged=false, @remains_running=true, @stop_timeout=1, @volumes=[], @vagrant_machine=nil, @vagrant_vagrantfile=nil, @auth_server=nil, @email="", @username="", @password="", @__invalid_methods=#<Set: {}>>
+ INFO machine: Initializing machine: etcd-2
+ INFO machine:   - Provider: VagrantPlugins::DockerProvider::Provider
+ INFO machine:   - Box: 
+ INFO machine:   - Data dir: /home/max/src/github/kiv-ds-vagrant/etcd-1/.vagrant/machines/etcd-2/docker
+ INFO machine: New machine ID: nil
+ INFO interface: Machine: metadata ["provider", :docker, {:target=>:"etcd-2"}]
+DEBUG command: Finding machine that match name: etcd-3
+DEBUG environment: Default provider: `docker`
+DEBUG environment: Using forced default provider: `docker`
+ INFO environment: Getting machine: etcd-3 (docker)
+ INFO environment: Uncached load of machine.
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "version"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO loader: Set "860_machine_etcd-3" = ["[\"2\", #<Proc:0x000073016f2ee288 /home/max/src/github/kiv-ds-vagrant/etcd-1/Vagrantfile:85>]"]
+ INFO loader: Loading configuration in order: [:home, :root, "860_machine_etcd-3"]
+ WARN loader: Unknown config sources: ["860_machine_etcd-1", "860_machine_etcd-2"]
+DEBUG loader: Loading from: root (cache)
+DEBUG loader: Loading from: 860_machine_etcd-3 (cache)
+DEBUG loader: Configuration loaded successfully, finalizing and returning
+DEBUG push: finalizing
+ INFO vmconfig: config class lookup for provider :docker gave us base class: VagrantPlugins::DockerProvider::Config
+ WARN vagrantfile: Failed to locate  with version 
+ WARN vagrantfile: Performing lookup with initial values  with version 
+ INFO vmconfig: looking up provider config for: :docker
+ INFO vmconfig: provider config value that was stored: #<VagrantPlugins::DockerProvider::Config:0x00007301553b7580 @build_args=[], @build_dir=nil, @git_repo=nil, @cmd=[], @compose=false, @compose_configuration={}, @create_args=[], @dockerfile=nil, @env={"NODE_NAME"=>"etcd-3", "NODE_IP"=>"10.0.1.13", "CLUSTER"=>"etcd-1=http://10.0.1.11:2380,etcd-2=http://10.0.1.12:2380,etcd-3=http://10.0.1.13:2380"}, @expose=[], @force_host_vm=false, @has_ssh=true, @host_vm_build_dir_options=nil, @image="etcd-1/etcdnode:0.1", @name="etcd-3", @links=[], @pull=false, @ports=[], @privileged=false, @remains_running=true, @stop_timeout=1, @volumes=[], @vagrant_machine=nil, @vagrant_vagrantfile=nil, @auth_server=nil, @email="", @username="", @password="", @__invalid_methods=#<Set: {}>>
+ INFO machine: Initializing machine: etcd-3
+ INFO machine:   - Provider: VagrantPlugins::DockerProvider::Provider
+ INFO machine:   - Box: 
+ INFO machine:   - Data dir: /home/max/src/github/kiv-ds-vagrant/etcd-1/.vagrant/machines/etcd-3/docker
+ INFO machine: New machine ID: nil
+ INFO interface: Machine: metadata ["provider", :docker, {:target=>:"etcd-3"}]
+DEBUG command: have machine list to process
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO command: With machine: etcd-1 (#<VagrantPlugins::DockerProvider::Provider:0x000073016f3972e8 @logger=#<Log4r::Logger:0x000073016f3eb640 @fullname="vagrant::provider::docker", @outputters=[], @additive=true, @name="docker", @path="vagrant::provider", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @machine=#<Vagrant::Machine: etcd-1 (VagrantPlugins::DockerProvider::Provider)>, @cap_logger=#<Log4r::Logger:0x000073016f3e3760 @fullname="vagrant::capability_host::vagrantplugins::dockerprovider::provider", @outputters=[], @additive=true, @name="provider", @path="vagrant::capability_host::vagrantplugins::dockerprovider", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @cap_host_chain=[[:docker, #<#<Class:0x000073016f2fd2b0>:0x000073016f25c5e0>]], @cap_args=[#<Vagrant::Machine: etcd-1 (VagrantPlugins::DockerProvider::Provider)>], @cap_caps={:docker=>#<Vagrant::Registry:0x000073016f2c95c8 @items={:public_address=>#<Proc:0x000073016f758350 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:63>, :proxy_machine=>#<Proc:0x000073016f757f18 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:68>, :has_communicator=>#<Proc:0x000073016f757ea0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:73>}, @results_cache={}>, :hyperv=>#<Vagrant::Registry:0x000073016f2c95a0 @items={:public_address=>#<Proc:0x000073016f7544d0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:28>, :snapshot_list=>#<Proc:0x000073016f7542f0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:33>, :configure_disks=>#<Proc:0x000073016f7542c8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:38>, :cleanup_disks=>#<Proc:0x000073016f7542a0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:43>, :validate_disk_ext=>#<Proc:0x000073016f754250 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:48>, :default_disk_exts=>#<Proc:0x000073016f754228 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:53>, :set_default_disk_ext=>#<Proc:0x000073016f754200 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:58>}, @results_cache={}>, :virtualbox=>#<Vagrant::Registry:0x000073016f2c9578 @items={:forwarded_ports=>#<Proc:0x000073016f7ae700 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:30>, :nic_mac_addresses=>#<Proc:0x000073016f7ae6d8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:35>, :public_address=>#<Proc:0x000073016f7ae6b0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:40>, :configure_disks=>#<Proc:0x000073016f7ae688 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:45>, :cleanup_disks=>#<Proc:0x000073016f7ae660 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:50>, :validate_disk_ext=>#<Proc:0x000073016f7ae638 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:55>, :default_disk_exts=>#<Proc:0x000073016f7ae610 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:60>, :set_default_disk_ext=>#<Proc:0x000073016f7ae5e8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:65>, :snapshot_list=>#<Proc:0x000073016f7ae598 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:70>}, @results_cache={}>}, @driver=#<VagrantPlugins::DockerProvider::Driver:0x000073016f25c3b0 @logger=#<Log4r::Logger:0x000073016f80dfc0 @fullname="vagrant::docker::driver", @outputters=[], @additive=true, @name="driver", @path="vagrant::docker", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @executor=#<VagrantPlugins::DockerProvider::Executor::Local:0x000073016f26c210>>>)
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO command: With machine: etcd-2 (#<VagrantPlugins::DockerProvider::Provider:0x000073016f82f1e8 @logger=#<Log4r::Logger:0x000073016f82f008 @fullname="vagrant::provider::docker", @outputters=[], @additive=true, @name="docker", @path="vagrant::provider", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @machine=#<Vagrant::Machine: etcd-2 (VagrantPlugins::DockerProvider::Provider)>, @cap_logger=#<Log4r::Logger:0x000073016f822998 @fullname="vagrant::capability_host::vagrantplugins::dockerprovider::provider", @outputters=[], @additive=true, @name="provider", @path="vagrant::capability_host::vagrantplugins::dockerprovider", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @cap_host_chain=[[:docker, #<#<Class:0x000073016f38d220>:0x000073016f262e18>]], @cap_args=[#<Vagrant::Machine: etcd-2 (VagrantPlugins::DockerProvider::Provider)>], @cap_caps={:docker=>#<Vagrant::Registry:0x000073016f254700 @items={:public_address=>#<Proc:0x000073016f758350 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:63>, :proxy_machine=>#<Proc:0x000073016f757f18 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:68>, :has_communicator=>#<Proc:0x000073016f757ea0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:73>}, @results_cache={}>, :hyperv=>#<Vagrant::Registry:0x000073016f2546d8 @items={:public_address=>#<Proc:0x000073016f7544d0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:28>, :snapshot_list=>#<Proc:0x000073016f7542f0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:33>, :configure_disks=>#<Proc:0x000073016f7542c8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:38>, :cleanup_disks=>#<Proc:0x000073016f7542a0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:43>, :validate_disk_ext=>#<Proc:0x000073016f754250 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:48>, :default_disk_exts=>#<Proc:0x000073016f754228 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:53>, :set_default_disk_ext=>#<Proc:0x000073016f754200 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:58>}, @results_cache={}>, :virtualbox=>#<Vagrant::Registry:0x000073016f2546b0 @items={:forwarded_ports=>#<Proc:0x000073016f7ae700 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:30>, :nic_mac_addresses=>#<Proc:0x000073016f7ae6d8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:35>, :public_address=>#<Proc:0x000073016f7ae6b0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:40>, :configure_disks=>#<Proc:0x000073016f7ae688 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:45>, :cleanup_disks=>#<Proc:0x000073016f7ae660 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:50>, :validate_disk_ext=>#<Proc:0x000073016f7ae638 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:55>, :default_disk_exts=>#<Proc:0x000073016f7ae610 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:60>, :set_default_disk_ext=>#<Proc:0x000073016f7ae5e8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:65>, :snapshot_list=>#<Proc:0x000073016f7ae598 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:70>}, @results_cache={}>}>)
+ INFO command: With machine: etcd-3 (#<VagrantPlugins::DockerProvider::Provider:0x000073016f2d3d98 @logger=#<Log4r::Logger:0x000073016f2d3c08 @fullname="vagrant::provider::docker", @outputters=[], @additive=true, @name="docker", @path="vagrant::provider", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @machine=#<Vagrant::Machine: etcd-3 (VagrantPlugins::DockerProvider::Provider)>, @cap_logger=#<Log4r::Logger:0x000073016f30e420 @fullname="vagrant::capability_host::vagrantplugins::dockerprovider::provider", @outputters=[], @additive=true, @name="provider", @path="vagrant::capability_host::vagrantplugins::dockerprovider", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @cap_host_chain=[[:docker, #<#<Class:0x000073016f389bc0>:0x0000730155272508>]], @cap_args=[#<Vagrant::Machine: etcd-3 (VagrantPlugins::DockerProvider::Provider)>], @cap_caps={:docker=>#<Vagrant::Registry:0x000073015527f780 @items={:public_address=>#<Proc:0x000073016f758350 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:63>, :proxy_machine=>#<Proc:0x000073016f757f18 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:68>, :has_communicator=>#<Proc:0x000073016f757ea0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:73>}, @results_cache={}>, :hyperv=>#<Vagrant::Registry:0x000073015527f758 @items={:public_address=>#<Proc:0x000073016f7544d0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:28>, :snapshot_list=>#<Proc:0x000073016f7542f0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:33>, :configure_disks=>#<Proc:0x000073016f7542c8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:38>, :cleanup_disks=>#<Proc:0x000073016f7542a0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:43>, :validate_disk_ext=>#<Proc:0x000073016f754250 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:48>, :default_disk_exts=>#<Proc:0x000073016f754228 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:53>, :set_default_disk_ext=>#<Proc:0x000073016f754200 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:58>}, @results_cache={}>, :virtualbox=>#<Vagrant::Registry:0x000073015527f730 @items={:forwarded_ports=>#<Proc:0x000073016f7ae700 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:30>, :nic_mac_addresses=>#<Proc:0x000073016f7ae6d8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:35>, :public_address=>#<Proc:0x000073016f7ae6b0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:40>, :configure_disks=>#<Proc:0x000073016f7ae688 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:45>, :cleanup_disks=>#<Proc:0x000073016f7ae660 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:50>, :validate_disk_ext=>#<Proc:0x000073016f7ae638 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:55>, :default_disk_exts=>#<Proc:0x000073016f7ae610 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:60>, :set_default_disk_ext=>#<Proc:0x000073016f7ae5e8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:65>, :snapshot_list=>#<Proc:0x000073016f7ae598 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:70>}, @results_cache={}>}>)
+DEBUG command: Getting target VMs for command. Arguments:
+DEBUG command:  -- names: ["etcd-1", "etcd-2", "etcd-3"]
+DEBUG command:  -- options: {:provider=>nil}
+ INFO command: getting active machines
+DEBUG command: Finding machine that match name: etcd-1
+ INFO command: Active machine found with name etcd-1. Using provider: docker
+ INFO environment: Getting machine: etcd-1 (docker)
+ INFO environment: Returning cached machine: etcd-1 (docker)
+DEBUG command: Finding machine that match name: etcd-2
+DEBUG environment: Default provider: `docker`
+DEBUG environment: Using forced default provider: `docker`
+ INFO environment: Getting machine: etcd-2 (docker)
+ INFO environment: Returning cached machine: etcd-2 (docker)
+DEBUG command: Finding machine that match name: etcd-3
+DEBUG environment: Default provider: `docker`
+DEBUG environment: Using forced default provider: `docker`
+ INFO environment: Getting machine: etcd-3 (docker)
+ INFO environment: Returning cached machine: etcd-3 (docker)
+DEBUG command: have machine list to process
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO command: With machine: etcd-1 (#<VagrantPlugins::DockerProvider::Provider:0x000073016f3972e8 @logger=#<Log4r::Logger:0x000073016f3eb640 @fullname="vagrant::provider::docker", @outputters=[], @additive=true, @name="docker", @path="vagrant::provider", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @machine=#<Vagrant::Machine: etcd-1 (VagrantPlugins::DockerProvider::Provider)>, @cap_logger=#<Log4r::Logger:0x000073016f3e3760 @fullname="vagrant::capability_host::vagrantplugins::dockerprovider::provider", @outputters=[], @additive=true, @name="provider", @path="vagrant::capability_host::vagrantplugins::dockerprovider", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @cap_host_chain=[[:docker, #<#<Class:0x000073016f2fd2b0>:0x000073016f25c5e0>]], @cap_args=[#<Vagrant::Machine: etcd-1 (VagrantPlugins::DockerProvider::Provider)>], @cap_caps={:docker=>#<Vagrant::Registry:0x000073016f2c95c8 @items={:public_address=>#<Proc:0x000073016f758350 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:63>, :proxy_machine=>#<Proc:0x000073016f757f18 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:68>, :has_communicator=>#<Proc:0x000073016f757ea0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:73>}, @results_cache={}>, :hyperv=>#<Vagrant::Registry:0x000073016f2c95a0 @items={:public_address=>#<Proc:0x000073016f7544d0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:28>, :snapshot_list=>#<Proc:0x000073016f7542f0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:33>, :configure_disks=>#<Proc:0x000073016f7542c8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:38>, :cleanup_disks=>#<Proc:0x000073016f7542a0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:43>, :validate_disk_ext=>#<Proc:0x000073016f754250 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:48>, :default_disk_exts=>#<Proc:0x000073016f754228 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:53>, :set_default_disk_ext=>#<Proc:0x000073016f754200 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:58>}, @results_cache={}>, :virtualbox=>#<Vagrant::Registry:0x000073016f2c9578 @items={:forwarded_ports=>#<Proc:0x000073016f7ae700 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:30>, :nic_mac_addresses=>#<Proc:0x000073016f7ae6d8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:35>, :public_address=>#<Proc:0x000073016f7ae6b0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:40>, :configure_disks=>#<Proc:0x000073016f7ae688 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:45>, :cleanup_disks=>#<Proc:0x000073016f7ae660 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:50>, :validate_disk_ext=>#<Proc:0x000073016f7ae638 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:55>, :default_disk_exts=>#<Proc:0x000073016f7ae610 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:60>, :set_default_disk_ext=>#<Proc:0x000073016f7ae5e8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:65>, :snapshot_list=>#<Proc:0x000073016f7ae598 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:70>}, @results_cache={}>}, @driver=#<VagrantPlugins::DockerProvider::Driver:0x000073016f25c3b0 @logger=#<Log4r::Logger:0x000073016f80dfc0 @fullname="vagrant::docker::driver", @outputters=[], @additive=true, @name="driver", @path="vagrant::docker", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @executor=#<VagrantPlugins::DockerProvider::Executor::Local:0x000073016f26c210>>>)
+ INFO interface: info: Bringing machine 'etcd-1' up with 'docker' provider...
+Bringing machine 'etcd-1' up with 'docker' provider...
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO command: With machine: etcd-2 (#<VagrantPlugins::DockerProvider::Provider:0x000073016f82f1e8 @logger=#<Log4r::Logger:0x000073016f82f008 @fullname="vagrant::provider::docker", @outputters=[], @additive=true, @name="docker", @path="vagrant::provider", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @machine=#<Vagrant::Machine: etcd-2 (VagrantPlugins::DockerProvider::Provider)>, @cap_logger=#<Log4r::Logger:0x000073016f822998 @fullname="vagrant::capability_host::vagrantplugins::dockerprovider::provider", @outputters=[], @additive=true, @name="provider", @path="vagrant::capability_host::vagrantplugins::dockerprovider", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @cap_host_chain=[[:docker, #<#<Class:0x000073016f38d220>:0x000073016f262e18>]], @cap_args=[#<Vagrant::Machine: etcd-2 (VagrantPlugins::DockerProvider::Provider)>], @cap_caps={:docker=>#<Vagrant::Registry:0x000073016f254700 @items={:public_address=>#<Proc:0x000073016f758350 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:63>, :proxy_machine=>#<Proc:0x000073016f757f18 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:68>, :has_communicator=>#<Proc:0x000073016f757ea0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:73>}, @results_cache={}>, :hyperv=>#<Vagrant::Registry:0x000073016f2546d8 @items={:public_address=>#<Proc:0x000073016f7544d0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:28>, :snapshot_list=>#<Proc:0x000073016f7542f0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:33>, :configure_disks=>#<Proc:0x000073016f7542c8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:38>, :cleanup_disks=>#<Proc:0x000073016f7542a0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:43>, :validate_disk_ext=>#<Proc:0x000073016f754250 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:48>, :default_disk_exts=>#<Proc:0x000073016f754228 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:53>, :set_default_disk_ext=>#<Proc:0x000073016f754200 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:58>}, @results_cache={}>, :virtualbox=>#<Vagrant::Registry:0x000073016f2546b0 @items={:forwarded_ports=>#<Proc:0x000073016f7ae700 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:30>, :nic_mac_addresses=>#<Proc:0x000073016f7ae6d8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:35>, :public_address=>#<Proc:0x000073016f7ae6b0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:40>, :configure_disks=>#<Proc:0x000073016f7ae688 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:45>, :cleanup_disks=>#<Proc:0x000073016f7ae660 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:50>, :validate_disk_ext=>#<Proc:0x000073016f7ae638 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:55>, :default_disk_exts=>#<Proc:0x000073016f7ae610 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:60>, :set_default_disk_ext=>#<Proc:0x000073016f7ae5e8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:65>, :snapshot_list=>#<Proc:0x000073016f7ae598 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:70>}, @results_cache={}>}>)
+ INFO interface: info: Bringing machine 'etcd-2' up with 'docker' provider...
+Bringing machine 'etcd-2' up with 'docker' provider...
+ INFO command: With machine: etcd-3 (#<VagrantPlugins::DockerProvider::Provider:0x000073016f2d3d98 @logger=#<Log4r::Logger:0x000073016f2d3c08 @fullname="vagrant::provider::docker", @outputters=[], @additive=true, @name="docker", @path="vagrant::provider", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @machine=#<Vagrant::Machine: etcd-3 (VagrantPlugins::DockerProvider::Provider)>, @cap_logger=#<Log4r::Logger:0x000073016f30e420 @fullname="vagrant::capability_host::vagrantplugins::dockerprovider::provider", @outputters=[], @additive=true, @name="provider", @path="vagrant::capability_host::vagrantplugins::dockerprovider", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @cap_host_chain=[[:docker, #<#<Class:0x000073016f389bc0>:0x0000730155272508>]], @cap_args=[#<Vagrant::Machine: etcd-3 (VagrantPlugins::DockerProvider::Provider)>], @cap_caps={:docker=>#<Vagrant::Registry:0x000073015527f780 @items={:public_address=>#<Proc:0x000073016f758350 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:63>, :proxy_machine=>#<Proc:0x000073016f757f18 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:68>, :has_communicator=>#<Proc:0x000073016f757ea0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/docker/plugin.rb:73>}, @results_cache={}>, :hyperv=>#<Vagrant::Registry:0x000073015527f758 @items={:public_address=>#<Proc:0x000073016f7544d0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:28>, :snapshot_list=>#<Proc:0x000073016f7542f0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:33>, :configure_disks=>#<Proc:0x000073016f7542c8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:38>, :cleanup_disks=>#<Proc:0x000073016f7542a0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:43>, :validate_disk_ext=>#<Proc:0x000073016f754250 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:48>, :default_disk_exts=>#<Proc:0x000073016f754228 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:53>, :set_default_disk_ext=>#<Proc:0x000073016f754200 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/hyperv/plugin.rb:58>}, @results_cache={}>, :virtualbox=>#<Vagrant::Registry:0x000073015527f730 @items={:forwarded_ports=>#<Proc:0x000073016f7ae700 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:30>, :nic_mac_addresses=>#<Proc:0x000073016f7ae6d8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:35>, :public_address=>#<Proc:0x000073016f7ae6b0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:40>, :configure_disks=>#<Proc:0x000073016f7ae688 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:45>, :cleanup_disks=>#<Proc:0x000073016f7ae660 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:50>, :validate_disk_ext=>#<Proc:0x000073016f7ae638 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:55>, :default_disk_exts=>#<Proc:0x000073016f7ae610 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:60>, :set_default_disk_ext=>#<Proc:0x000073016f7ae5e8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:65>, :snapshot_list=>#<Proc:0x000073016f7ae598 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/plugins/providers/virtualbox/plugin.rb:70>}, @results_cache={}>}>)
+ INFO interface: info: Bringing machine 'etcd-3' up with 'docker' provider...
+Bringing machine 'etcd-3' up with 'docker' provider...
+ INFO batch_action: Batch action will parallelize: false
+ INFO batch_action: Starting action: #<Vagrant::Machine:0x00007301553a3cb0> up {:destroy_on_error=>true, :install_provider=>false, :parallel=>true, :provision_ignore_sentinel=>false, :provision_types=>nil}
+ INFO machine: Calling action: up on provider Docker (17846f7c9cd2b2610935b08324be88cc9b276dd63e876ea7b091f1a2cc8d54ee)
+DEBUG environment: Attempting to acquire process-lock: machine-action-6a1a06677854877e971e8edcd5c28f38
+DEBUG environment: Attempting to acquire process-lock: dotlock
+ INFO environment: Acquired process lock: dotlock
+ INFO environment: Released process lock: dotlock
+ INFO environment: Acquired process lock: machine-action-6a1a06677854877e971e8edcd5c28f38
+ INFO interface: Machine: action ["up", "start", {:target=>:"etcd-1"}]
+ INFO host: Autodetecting host type for [#<Vagrant::Environment: /home/max/src/github/kiv-ds-vagrant/etcd-1>]
+DEBUG host: Trying: slackware
+DEBUG host: Trying: darwin
+DEBUG host: Trying: freebsd
+DEBUG host: Trying: gentoo
+DEBUG host: Trying: arch
+DEBUG host: Trying: alt
+DEBUG host: Trying: redhat
+DEBUG host: Trying: suse
+DEBUG host: Trying: void
+DEBUG host: Trying: null
+DEBUG host: Trying: windows
+DEBUG host: Trying: linux
+ INFO host: Detected: linux!
+ INFO runner: Running action: machine_action_up #<Vagrant::Action::Builder:0x000073015525f548>
+DEBUG trigger: Trigger 79e94fc5-3ac1-44f7-8f4d-04d7d581aca5 will be ignored for etcd-1
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::Call:0x000073016fe48750>
+ INFO runner: Running action: machine_action_up #<Vagrant::Action::Builder:0x000073016f26b180>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::IsState:0x000073016f3b83a8>
+DEBUG is_state: Checking if machine state is 'not_created'
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+DEBUG is_state: -- Machine state: stopped
+ INFO warden: Calling OUT action: #<Vagrant::Action::Builtin::IsState:0x000073016f3b83a8>
+ INFO runner: Running action: machine_action_up #<Vagrant::Action::Warden:0x000073016f370288>
+ INFO warden: Calling IN action: #<Proc:0x00007301549bb1f8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/lib/vagrant/action/warden.rb:116 (lambda)>
+ INFO warden: Calling IN action: #<Proc:0x00007301552757d0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/lib/vagrant/action/warden.rb:116 (lambda)>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::ConfigValidate:0x00007301549be8d0>
+DEBUG syncedfolder: Searching for cap: default_fstab_modification
+DEBUG syncedfolder: Checking in: docker
+ INFO interface: warn: The command 'up' was not found for this trigger.
+ INFO interface: warn: ==> etcd-1: The command 'up' was not found for this trigger.
+==> etcd-1: The command 'up' was not found for this trigger.
+ INFO warden: Calling IN action: #<VagrantPlugins::DockerProvider::Action::HostMachine:0x00007301549be858>
+ INFO hostmachine: No host machine needed.
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::Call:0x000073016f33a840>
+ INFO runner: Running action: machine_action_up #<Vagrant::Action::Builder:0x00007301549e1ab0>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::IsState:0x000073016f33fca0>
+DEBUG is_state: Checking if machine state is 'not_created'
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+DEBUG is_state: -- Machine state: stopped
+ INFO warden: Calling OUT action: #<Vagrant::Action::Builtin::IsState:0x000073016f33fca0>
+ INFO runner: Running action: machine_action_up #<Vagrant::Action::Warden:0x000073016fd96050>
+ INFO warden: Calling IN action: #<Proc:0x000073016f2a5240 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/lib/vagrant/action/warden.rb:116 (lambda)>
+ INFO warden: Calling IN action: #<Proc:0x000073016f252720 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/lib/vagrant/action/warden.rb:116 (lambda)>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::Call:0x000073016f33a750>
+ INFO runner: Running action: machine_action_up #<Vagrant::Action::Builder:0x00007301553eb678>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::IsState:0x000073016f3b5928>
+DEBUG is_state: Checking if machine state is 'running'
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 31999
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+DEBUG is_state: -- Machine state: stopped
+ INFO warden: Calling OUT action: #<Vagrant::Action::Builtin::IsState:0x000073016f3b5928>
+ INFO runner: Running action: machine_action_up #<Vagrant::Action::Warden:0x000073016f33f2a0>
+ INFO warden: Calling IN action: #<Proc:0x000073015334fef0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/lib/vagrant/action/warden.rb:116 (lambda)>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::Call:0x000073016f33f250>
+ INFO runner: Running action: machine_action_up #<Vagrant::Action::Builder:0x0000730153333f48>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::HasProvisioner:0x00007301549b8228>
+DEBUG provider: Searching for cap: has_communicator
+DEBUG provider: Checking in: docker
+DEBUG provider: Found cap: has_communicator in docker
+DEBUG provider: Searching for cap: has_communicator
+DEBUG provider: Checking in: docker
+DEBUG provider: Found cap: has_communicator in docker
+ INFO provider: Execute capability: has_communicator [#<Vagrant::Machine: etcd-1 (VagrantPlugins::DockerProvider::Provider)>] (docker)
+ INFO warden: Calling OUT action: #<Vagrant::Action::Builtin::HasProvisioner:0x00007301549b8228>
+ INFO runner: Running action: machine_action_up #<Vagrant::Action::Warden:0x000073016f3b27c8>
+ INFO warden: Calling IN action: #<Proc:0x0000730154862770 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/lib/vagrant/action/warden.rb:116 (lambda)>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::Provision:0x000073015332d238>
+ INFO provision: Checking provisioner sentinel file...
+ INFO warden: Calling IN action: #<Proc:0x000073015333e6f0 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/lib/vagrant/action/warden.rb:116 (lambda)>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::Call:0x000073016f33f1b0>
+ INFO runner: Running action: machine_action_up #<Vagrant::Action::Builder:0x000073016f2e6a60>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::IsState:0x000073016f875cd8>
+DEBUG is_state: Checking if machine state is 'not_created'
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+DEBUG is_state: -- Machine state: stopped
+ INFO warden: Calling OUT action: #<Vagrant::Action::Builtin::IsState:0x000073016f875cd8>
+ INFO runner: Running action: machine_action_up #<Vagrant::Action::Warden:0x000073016f996360>
+ INFO warden: Calling IN action: #<Proc:0x0000730155276108 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/lib/vagrant/action/warden.rb:116 (lambda)>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::EnvSet:0x000073015338b680>
+ INFO warden: Calling IN action: #<Proc:0x000073015338b5b8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/lib/vagrant/action/warden.rb:116 (lambda)>
+ INFO warden: Calling IN action: #<VagrantPlugins::DockerProvider::Action::HostMachineBuildDir:0x0000730155268198>
+ INFO warden: Calling IN action: #<VagrantPlugins::DockerProvider::Action::HostMachineSyncFolders:0x000073016f251ca8>
+ INFO warden: Calling IN action: #<VagrantPlugins::DockerProvider::Action::PrepareNFSValidIds:0x00007301549b5118>
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO warden: Calling IN action: #<VagrantPlugins::SyncedFolderNFS::ActionCleanup:0x00007301533d6fb8>
+DEBUG host: Searching for cap: nfs_prune
+DEBUG host: Checking in: linux
+DEBUG host: Found cap: nfs_prune in linux
+ INFO nfs: NFS pruning. Valid IDs: ["1e14d15f46a1e289cb1d094976ee0e4ffd6658b553db3c5d0518bd066ef85740", "8529b5f71c45254ef128e4149d4b447ef3e12ebf4065eaac94e3a432e32a23e0", "da18dccb6375be53d5abaff6f08cd006d5499fdae04400fe446b20509d92d6db", "c77ea7a2549cb9a0b53578eecfc86ee6d6f6ec3ad6f6e2282f4468d7b767f4f9", "17846f7c9cd2b2610935b08324be88cc9b276dd63e876ea7b091f1a2cc8d54ee", "ed23968c9478f8c3f2812a751ee12fbc54c407d7465a3ddfef1f1b61988a9f3c", "d8f9b35e5b67ac8a16eb9df514bbebd27647b437186b0eedc4ea024e99eb8810", "f747c0b2b88616be545d4f495092fc0b4ee1846a9f7f453caec4e41bb6ef11a2", "3aa7440a1758a2e4ebe7901cf5c0296b41832af142660818cbfb1208b04069f7", "5181037d9a12a0341353ee34a7ca6d61b7c6fc40e934f8ab23f2b4408a22b950", "7ff956149fc29d1cc1a871c70a55a3cd181afea8cc8be25ba5d7f74adfe7a577", "57812f3fe6fcf41bdd78fc21e5627077941fbfaba9886a243f812cd24da09bf0", "e9954107d66a8e928635b8eccdfebf7f9da6c982bd02a85326d1c14622613553", "1a192317b40c4cf7b7596a170155fcf913cfc754c9b0acd6bb1011e624761da6", "fe8eafc468dad06ad97c9df67b067a8eb0062fc77a513ca1414cfaf1a0c6a9cb", "e38c2207e2c9366e56ec44db89b9b9a5e6073c967d4f6f9da22f49d421058af4", "37e738681e8e80f41a0d54dd681c20ad91705a98640014d5d40c0625a966fb0b", "b5b1449e44d59355e56213eb0be2089f190cc0f5ee1079a6c7324edc0164cc03", "21e671693f15edcfd4839595d5e74fd3f8a4a80d2d3917b4f98b75ae0d1c5ae2", "d97d2e899d6d7b3f13c7048e56070ff65f8b3242ba6937f2195dc31878edf5c7", "a90451c626d9c6e36db79a3d4de2fce0defd66459739a384d052f1cc7889e73c", "55bbd57cf96031e2d38f953e3c999dc778e9027706f67b1f5007122cf01681ac", "6f30c5c6c4caf35cdd82ffb8cae1654ae5b2dd1da2552f35b05114c8a31266cb", "938f3663e223277e979361f043a2018cdf7ab380bf9bb007ef67941410e7c426", "b78ab9a21706f21abdba8aee176ed5859d9cbcb6ee829480d916757f9ea59953", "b132a2028b29c3100cd8490776b56e51396af8a015a0fa2fd128ebd3165d1f5b", "91d30fc4faae99e427b4237013e9d380430b3a9908d41fc6f8e0b2c320143abc", "bf3328c971fe767d62132efafd263918e26d5378ba32b15cc8572ec7b6989eaf"]
+DEBUG host: Searching for cap: nfs_prune
+DEBUG host: Checking in: linux
+DEBUG host: Found cap: nfs_prune in linux
+ INFO host: Execute capability: nfs_prune [#<Vagrant::Environment: /home/max/src/github/kiv-ds-vagrant/etcd-1>, #<Vagrant::UI::Prefixed:0x000073016f3bab58 @logger=#<Log4r::Logger:0x000073016f3baab8 @fullname="vagrant::ui::interface", @outputters=[], @additive=true, @name="interface", @path="vagrant::ui", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @opts={}, @stdin=#<IO:<STDIN>>, @stdout=#<IO:<STDOUT>>, @stderr=#<IO:<STDERR>>, @prefix=:"etcd-1", @ui=#<Vagrant::UI::Basic:0x000073016f993cf0 @logger=#<Log4r::Logger:0x000073016f993930 @fullname="vagrant::ui::interface", @outputters=[], @additive=true, @name="interface", @path="vagrant::ui", @parent=#<VagrantLogger:0x000073017073ead0 @fullname="vagrant", @outputters=[#<Log4r::StderrOutputter:0x000073016f8c8820 @name="stderr", @level=0, @formatter=#<Vagrant::Util::LoggingFormatter:0x000073016fcf2518 @formatter=#<Log4r::BasicFormatter:0x0000730170740bf0 @depth=7>>, @out=#<IO:<STDERR>>>], @additive=true, @name="vagrant", @path="", @parent=#<Log4r::RootLogger:0x000073016fd01590 @level=2, @outputters=[]>, @level=2, @trace=false>, @level=2, @trace=false>, @opts={:color=>:default}, @stdin=#<IO:<STDIN>>, @stdout=#<IO:<STDOUT>>, @stderr=#<IO:<STDERR>>, @lock=#<Thread::Mutex:0x000073016f83a138>>>, ["1e14d15f46a1e289cb1d094976ee0e4ffd6658b553db3c5d0518bd066ef85740", "8529b5f71c45254ef128e4149d4b447ef3e12ebf4065eaac94e3a432e32a23e0", "da18dccb6375be53d5abaff6f08cd006d5499fdae04400fe446b20509d92d6db", "c77ea7a2549cb9a0b53578eecfc86ee6d6f6ec3ad6f6e2282f4468d7b767f4f9", "17846f7c9cd2b2610935b08324be88cc9b276dd63e876ea7b091f1a2cc8d54ee", "ed23968c9478f8c3f2812a751ee12fbc54c407d7465a3ddfef1f1b61988a9f3c", "d8f9b35e5b67ac8a16eb9df514bbebd27647b437186b0eedc4ea024e99eb8810", "f747c0b2b88616be545d4f495092fc0b4ee1846a9f7f453caec4e41bb6ef11a2", "3aa7440a1758a2e4ebe7901cf5c0296b41832af142660818cbfb1208b04069f7", "5181037d9a12a0341353ee34a7ca6d61b7c6fc40e934f8ab23f2b4408a22b950", "7ff956149fc29d1cc1a871c70a55a3cd181afea8cc8be25ba5d7f74adfe7a577", "57812f3fe6fcf41bdd78fc21e5627077941fbfaba9886a243f812cd24da09bf0", "e9954107d66a8e928635b8eccdfebf7f9da6c982bd02a85326d1c14622613553", "1a192317b40c4cf7b7596a170155fcf913cfc754c9b0acd6bb1011e624761da6", "fe8eafc468dad06ad97c9df67b067a8eb0062fc77a513ca1414cfaf1a0c6a9cb", "e38c2207e2c9366e56ec44db89b9b9a5e6073c967d4f6f9da22f49d421058af4", "37e738681e8e80f41a0d54dd681c20ad91705a98640014d5d40c0625a966fb0b", "b5b1449e44d59355e56213eb0be2089f190cc0f5ee1079a6c7324edc0164cc03", "21e671693f15edcfd4839595d5e74fd3f8a4a80d2d3917b4f98b75ae0d1c5ae2", "d97d2e899d6d7b3f13c7048e56070ff65f8b3242ba6937f2195dc31878edf5c7", "a90451c626d9c6e36db79a3d4de2fce0defd66459739a384d052f1cc7889e73c", "55bbd57cf96031e2d38f953e3c999dc778e9027706f67b1f5007122cf01681ac", "6f30c5c6c4caf35cdd82ffb8cae1654ae5b2dd1da2552f35b05114c8a31266cb", "938f3663e223277e979361f043a2018cdf7ab380bf9bb007ef67941410e7c426", "b78ab9a21706f21abdba8aee176ed5859d9cbcb6ee829480d916757f9ea59953", "b132a2028b29c3100cd8490776b56e51396af8a015a0fa2fd128ebd3165d1f5b", "91d30fc4faae99e427b4237013e9d380430b3a9908d41fc6f8e0b2c320143abc", "bf3328c971fe767d62132efafd263918e26d5378ba32b15cc8572ec7b6989eaf"]] (linux)
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::SyncedFolderCleanup:0x00007301548544b8>
+ INFO synced_folder_cleanup: Invoking synced folder cleanup for: docker
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::Delayed:0x0000730154884320>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::SyncedFolders:0x00007301548841e0>
+ INFO synced_folders: SyncedFolders loading from cache: false
+ INFO synced_folders: Synced Folder Implementation: docker
+ INFO synced_folders:   - /vagrant: . => /vagrant
+ INFO synced_folders: Invoking synced folder prepare for: docker
+ INFO warden: Calling IN action: #<VagrantPlugins::DockerProvider::Action::PrepareNFSSettings:0x00007301552300b8>
+ INFO warden: Calling IN action: #<VagrantPlugins::DockerProvider::Action::PrepareNetworks:0x000073016f320b70>
+DEBUG environment: Attempting to acquire process-lock: docker-network-create
+DEBUG environment: Attempting to acquire process-lock: dotlock
+ INFO environment: Acquired process lock: dotlock
+ INFO environment: Released process lock: dotlock
+ INFO environment: Acquired process lock: docker-network-create
+ INFO interface: info: Creating and configuring docker networks...
+ INFO interface: info: ==> etcd-1: Creating and configuring docker networks...
+==> etcd-1: Creating and configuring docker networks...
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "network", "ls", "--format={{.Name}}"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "network", "inspect", "bridge", "clab", "common-base-profile_devcontainer_default", "example-project_devcontainer_default", "host", "kubernetes-k0s_devcontainer_default", "mqtt-emqx-broker-and-webapp_devcontainer_default", "mqtt_devcontainer_default", "none", "vagrant_network_10.0.1.0/24"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "network", "ls", "--format={{.Name}}"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+DEBUG preparenetworks: Network vagrant_network_10.0.1.0/24 already created
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "network", "ls", "--format={{.Name}}"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "network", "inspect", "bridge", "clab", "common-base-profile_devcontainer_default", "example-project_devcontainer_default", "host", "kubernetes-k0s_devcontainer_default", "mqtt-emqx-broker-and-webapp_devcontainer_default", "mqtt_devcontainer_default", "none", "vagrant_network_10.0.1.0/24"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 31999
+DEBUG subprocess: Exit status: 0
+ INFO environment: Released process lock: docker-network-create
+DEBUG environment: Attempting to acquire process-lock: dotlock
+ INFO environment: Acquired process lock: dotlock
+ INFO environment: Released process lock: dotlock
+ INFO warden: Calling IN action: #<VagrantPlugins::DockerProvider::Action::Login:0x00007301533cdc88>
+ INFO warden: Calling IN action: #<VagrantPlugins::DockerProvider::Action::Build:0x00007301533c04e8>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::Call:0x000073016f2def68>
+ INFO runner: Running action: machine_action_up #<Vagrant::Action::Builder:0x0000730153338f20>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::IsState:0x000073016f335020>
+DEBUG is_state: Checking if machine state is 'preparing'
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+DEBUG is_state: -- Machine state: stopped
+ INFO warden: Calling OUT action: #<Vagrant::Action::Builtin::IsState:0x000073016f335020>
+ INFO runner: Running action: machine_action_up #<Vagrant::Action::Warden:0x000073016f376d68>
+ INFO warden: Calling IN action: #<Proc:0x00007301532dc270 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/lib/vagrant/action/warden.rb:116 (lambda)>
+ INFO warden: Calling IN action: #<VagrantPlugins::DockerProvider::Action::CompareSyncedFolders:0x000073015338cd50>
+ INFO interface: warn: Vagrant has noticed that the synced folder definitions have changed.
+With Docker, these synced folder changes won't take effect until you
+destroy the container and recreate it.
+ INFO interface: warn: ==> etcd-1: Vagrant has noticed that the synced folder definitions have changed.
+==> etcd-1: With Docker, these synced folder changes won't take effect until you
+==> etcd-1: destroy the container and recreate it.
+==> etcd-1: Vagrant has noticed that the synced folder definitions have changed.
+==> etcd-1: With Docker, these synced folder changes won't take effect until you
+==> etcd-1: destroy the container and recreate it.
+ INFO warden: Calling IN action: #<Proc:0x000073015338ccd8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/lib/vagrant/action/warden.rb:116 (lambda)>
+ INFO warden: Calling IN action: #<VagrantPlugins::DockerProvider::Action::ConnectNetworks:0x00007301533b2b68>
+ INFO interface: info: Enabling network interfaces...
+ INFO interface: info: ==> etcd-1: Enabling network interfaces...
+==> etcd-1: Enabling network interfaces...
+DEBUG connectnetworks: Connecting network vagrant_network_10.0.1.0/24 to container guest etcd-1
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "network", "connect", "vagrant_network_10.0.1.0/24", "17846f7c9cd2b2610935b08324be88cc9b276dd63e876ea7b091f1a2cc8d54ee", "--ip", "10.0.1.11"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO warden: Calling IN action: #<VagrantPlugins::DockerProvider::Action::Start:0x00007301533a5008>
+ INFO interface: output: Starting container...
+ INFO interface: output: ==> etcd-1: Starting container...
+==> etcd-1: Starting container...
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "start", "17846f7c9cd2b2610935b08324be88cc9b276dd63e876ea7b091f1a2cc8d54ee"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO warden: Calling IN action: #<VagrantPlugins::DockerProvider::Action::WaitForRunning:0x00007301533a4f90>
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+DEBUG waitforrunning: container is already running
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::Call:0x000073016f3073f0>
+ INFO runner: Running action: machine_action_up #<Vagrant::Action::Builder:0x000073016f363100>
+ INFO warden: Calling IN action: #<VagrantPlugins::DockerProvider::Action::HasSSH:0x0000730153372068>
+ INFO warden: Calling OUT action: #<VagrantPlugins::DockerProvider::Action::HasSSH:0x0000730153372068>
+ INFO runner: Running action: machine_action_up #<Vagrant::Action::Warden:0x000073016f3b8678>
+ INFO warden: Calling IN action: #<Proc:0x00007301532cf0e8 /opt/vagrant/embedded/gems/gems/vagrant-2.4.3/lib/vagrant/action/warden.rb:116 (lambda)>
+ INFO warden: Calling IN action: #<Vagrant::Action::Builtin::WaitForCommunicator:0x000073015331c7a8>
+ INFO interface: output: Waiting for machine to boot. This may take a few minutes...
+ INFO interface: output: ==> etcd-1: Waiting for machine to boot. This may take a few minutes...
+==> etcd-1: Waiting for machine to boot. This may take a few minutes...
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "inspect", "17846f7c9cd2b2610935b08324be88cc9b276dd63e876ea7b091f1a2cc8d54ee"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 31999
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 31999
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+ INFO subprocess: Starting process: ["/usr/local/bin/docker", "ps", "-a", "-q", "--no-trunc"]
+ INFO subprocess: Command not in installer, restoring original environment...
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Selecting on IO
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0
+DEBUG subprocess: Waiting for process to exit. Remaining to timeout: 32000
+DEBUG subprocess: Exit status: 0

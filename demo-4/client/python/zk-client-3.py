@@ -16,7 +16,7 @@ def watch_handler(event):
   print("Received watch event.")
   pp.pprint(event)
   # Get the current list of node children and set the watch again, because their are one-time triggers
-  children = zk.get_children("/ds/clients", watch=watch_handler)
+  children = zk.get_children("/dsa/clients", watch=watch_handler)
   pp.pprint(children)
 
 def main():
@@ -29,10 +29,15 @@ def main():
   zk.start()
 
   # Ensure the clients context path exists
-  zk.create("/ds/clients", makepath=True)
+  zk.create("/dsa/clients", makepath=True)
   # Get the list of child nodes and set the one-time watch handler
-  children = zk.get_children("/ds/clients", watch=watch_handler)
+  children = zk.get_children("/dsa/clients", watch=watch_handler)
+
   pp.pprint(children)
+  # Print first child - is master
+  if len(children) > 0:
+    children.sort()
+    print(f"Master is: { children[0] }.")
 
   # Sleep for 5 min.
   sleep(300)
